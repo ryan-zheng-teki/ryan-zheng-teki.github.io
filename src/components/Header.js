@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/components/_index.scss';
 import { Link } from "react-router-dom";
 
 export function Header() {
@@ -9,7 +8,7 @@ export function Header() {
             <p className="logo">My Tech Life</p>
             <ul className="category">
                 <li>
-                    <Link to="/">Home</Link>
+                    <Link to="/">Life</Link>
                 </li>
                 <li>
                     <Link to="/about">About</Link>
