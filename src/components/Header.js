@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/components/_index.scss';
 
 export function Header() {
-    const categories = ['Tech', 'Life', 'About me'];
+    const categories = ['Blogs', 'Life', 'About me'];
     return (
         <div className="header">
             <p className="logo">My Tech Life</p>
