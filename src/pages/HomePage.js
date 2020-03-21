@@ -1,7 +1,8 @@
 import React from 'react';
+import { Header } from '../components';
 
-
-function HomePage(props) {
-    let categories = ['Tech','Life'];
-    return <h1>Hello, {categories}</h1>;
-  }
+export function HomePage() {
+    return (
+        <Header/>
+    );
+}

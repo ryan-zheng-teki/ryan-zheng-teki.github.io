@@ -1,0 +1,19 @@
+.header {
+    display: flex;
+
+    .logo {
+        padding-left: 10vw;
+    }
+
+    .category {
+        flex: 1;
+        justify-content: flex-end;
+        list-style-type: none;
+        display: flex;
+        margin-right: 10vw;
+
+        > * {
+            padding: 10px;
+        }
+    }
+}
