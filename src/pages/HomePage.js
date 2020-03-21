@@ -1,8 +1,10 @@
 import React from 'react';
 import { Header } from '../components';
 
-export function HomePage() {
-    return (
-        <Header/>
-    );
+export class HomePage extends React.Component {
+    render() {
+        return (
+            <p>Still considering what to show here</p>
+        );
+    }
 }
