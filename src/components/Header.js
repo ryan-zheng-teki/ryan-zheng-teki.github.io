@@ -8,14 +8,15 @@ export function Header() {
             <p className="logo">My Tech Life</p>
             <ul className="category">
                 <li>
+                    <Link to="/blogs">Blogs</Link>
+                </li>
+                <li>
                     <Link to="/">Life</Link>
                 </li>
                 <li>
-                    <Link to="/about">About</Link>
+                    <Link to="/about">About Me</Link>
                 </li>
-                <li>
-                    <Link to="/blogs">Blogs</Link>
-                </li>
+
             </ul>
         </div>
     )
