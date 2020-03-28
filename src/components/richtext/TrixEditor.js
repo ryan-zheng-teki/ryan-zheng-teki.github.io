@@ -1,20 +1,23 @@
 import React from 'react';
 import loadQuill from './loadQuill';
-export class QuillEditor extends React.Component {
+import 'trix/trix';
+import 'trix/trix-core';
+
+export class TrixEditor extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
             editor: null,
         }
-        this.initializeQuillEditor = this.initializeQuillEditor.bind(this);
+        this.initializeTrixEditor = this.initializeTrixEditor.bind(this);
     }
 
     componentDidMount() {
         loadQuill(this.initializeQuillEditor);
     }
     
-    initializeQuillEditor() {
+    initializeTrixEditor() {
         this.setState({
             editor: new window.Quill('#editor', {
                 theme: 'snow'
@@ -31,11 +34,3 @@ export class QuillEditor extends React.Component {
         );
     }   
 }
-
-
-
-
-
-
-
-

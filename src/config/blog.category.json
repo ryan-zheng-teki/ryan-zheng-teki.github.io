@@ -1,0 +1,15 @@
+{
+    "machine learning": {
+        "cv" : "/cv",
+        "nlp" : "/nlp"
+    },
+    "programming languages": {
+        "python": "/python",
+        "javascript": "/javascript",
+        "java": "/java"
+    },
+    "frameworks": {
+        "spring": "/spring",
+        "django" : "/django"
+    }
+}

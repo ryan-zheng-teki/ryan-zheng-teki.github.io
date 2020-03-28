@@ -1,5 +1,5 @@
 {
-  "homepage": "http://ryan-zheng0312.github.io/tech-blogs",
+  "homepage": "http://ryan-zheng-teki.github.io/tech-blogs",
   "name": "tech-blogs",
   "version": "0.1.0",
   "private": true,
@@ -11,7 +11,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "trix": "^1.2.3"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -58,11 +58,36 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/ma
 ### Advanced Configuration
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
 ### Deployment
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
 ### `yarn build` fails to minify
 
+
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
+nvm install 11.4
+nvm ls-remote
+
+npx create-react-app blog
+
+
+npm install gh-pages --save-dev
+
+"homepage": "http://username.github.io/blog"
+
+"scripts": {
+  //...
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
+}
+
+git init
+git remote add origin https://github.com/[username]/blog.git
+npm run deploy
+
+rm -rf .git
+git add -A
+git commit -m "initial comit"
+git branch -a

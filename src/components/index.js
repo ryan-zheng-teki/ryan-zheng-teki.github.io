@@ -1,3 +1,3 @@
 import { Header } from './Header';
-
-export { Header };
+import { QuillEditor } from './richtext';
+export { Header, QuillEditor };
