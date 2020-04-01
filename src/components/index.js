@@ -1,3 +1,4 @@
 import { Header } from './Header';
 import { QuillEditor } from './richtext';
-export { Header, QuillEditor };
+import { BlogCategoryNavigator } from './blogs';
+export { Header, QuillEditor, BlogCategoryNavigator };

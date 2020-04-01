@@ -21,7 +21,7 @@ function App() {
           </Route>
         </Switch>
       </div>
-      <QuillEditor />
+      <QuillEditor/>
     </Router>
   );
 }

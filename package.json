@@ -7,18 +7,20 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "node-sass": "^4.13.1",
+    "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^7.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1",
+    "react-scripts": "^3.4.1",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^1.1.3",
     "trix": "^1.2.3"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js",
+    "start": "cross-env NODE_ENV=develop webpack-dev-server --open --mode development",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
@@ -38,6 +40,17 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.2.0"
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.4.2",
+    "gh-pages": "^2.2.0",
+    "html-loader": "^1.0.0",
+    "html-webpack-plugin": "^4.0.4",
+    "node-sass": "^4.13.1",
+    "sass-loader": "^8.0.2",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
   }
 }

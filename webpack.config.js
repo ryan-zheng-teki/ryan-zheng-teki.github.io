@@ -1,0 +1,55 @@
+const path = require('path');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const {CleanWebpackPlugin} = require("clean-webpack-plugin");
+
+module.exports = {
+    mode: 'production',
+    entry: './src/index',
+    devtool: 'inline-source-map',
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'app.bundle.js'
+    },
+    resolve: {
+        extensions: ['.js', '.jsx'],
+        alias: {
+            components: path.resolve(__dirname, 'src/components/'),
+            config: path.resolve(__dirname, 'src/config/'),
+        }
+    },
+    module: {
+        rules: [{
+            test: /\.(js|jsx)$/,
+            loader: 'babel-loader',
+            exclude: [
+                '/node_modules/',
+            ],
+        },
+        {
+            test: /\.scss$/,
+            use: ['style-loader', 'css-loader', 'sass-loader'],
+          },
+        {
+            enforce: "pre",
+            test: /\.js$/,
+            loader: "source-map-loader"
+        }
+        ]
+    },
+    devtool: 'inline-source-map',
+    devServer: {
+        contentBase: './build',
+        port: 3000,
+        hot: true
+    },
+    plugins: [
+      new CleanWebpackPlugin(),
+      new HtmlWebpackPlugin({
+        template: './src/index.html',
+        filename: './index.html'       })
+    ],
+    node: {
+        fs: "empty",
+        module: "empty"
+    }
+}
