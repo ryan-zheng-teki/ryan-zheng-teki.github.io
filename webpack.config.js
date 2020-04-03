@@ -29,7 +29,11 @@ module.exports = {
         {
             test: /\.scss$/,
             use: ['style-loader', 'css-loader', 'sass-loader'],
-          },
+        },
+        {
+            test: /\.xml$/i,
+            use: 'raw-loader',
+        },
         {
             enforce: "pre",
             test: /\.js$/,

@@ -1,0 +1,32 @@
+<MachineLearning>
+    <Link to="machinlearning"/>
+    <Text>Machine Learning</Text>
+    <Children>
+        <CV>
+            <Link to="cv"/>
+            <Text>CV</Text>
+        </CV>
+        <Nlp>
+            <Link to="cv"/>
+            <Text>CV</Text>
+        </Nlp>
+    </Children>
+    <ProgrammingLanguage>
+        <Link to="programminglanguages"/>
+        <Text>Programming Language</Text>
+        <Children>
+            <Python>
+                <Link to="python"/>
+                <Text>python</Text>
+            </Python>
+            <Javascript>
+                <Link to="javascript"/>
+                <Text>Javascript</Text>
+            </Javascript>
+            <Java>
+                <Link to="Java"/>
+                <Text>Java</Text>
+            </Java>
+    </Children>
+    </ProgrammingLanguage>
+</MachineLearning>

@@ -1,14 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { BlogCategoryModel } from './BlogCategoryModel';
 
 
 
-export interface BlogCategory {
-    link: string;
-    text: string;
-}
-export class BlogCategory extends React.Component<BlogCategory,{}> {
-    constructor(props: BlogCategory) {
+export class BlogCategory extends React.Component<BlogCategoryModel,{}> {
+    constructor(props: BlogCategoryModel) {
         super(props);
     }
 
