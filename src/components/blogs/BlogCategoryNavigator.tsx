@@ -4,7 +4,7 @@ import { BlogCategoryModel } from './BlogCategoryModel';
 import * as BlogCategoryService from './BlogCategoryService';
 
 export class BlogCategoryNavigator extends React.Component<{},BlogCategoryModel> {
-    constructor(props) {
+    constructor(props: any) {
         super(props);
     }
 

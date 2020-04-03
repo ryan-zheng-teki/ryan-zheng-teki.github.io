@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-
+import logo from 'Assets/logo.svg';
 export function Header() {
 
     return (
         <div className="header">
-            <p className="logo">My Tech Life</p>
+            <img className='logo' src={logo} />
             <ul className="category">
                 <li>
-                    <Link to="/blogs">Blogs</Link>
+                    <Link to="/blogs">
+                       Blogs
+                    </Link>
                 </li>
                 <li>
                     <Link to="/">Life</Link>
