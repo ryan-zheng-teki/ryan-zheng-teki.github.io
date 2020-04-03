@@ -4,7 +4,9 @@ import { Header } from '../components';
 export class HomePage extends React.Component {
     render() {
         return (
-            <p>Still considering what to show here</p>
+            <React.Fragment>
+                <p>Still considering what to show here</p>
+            </React.Fragment>
         );
     }
 }

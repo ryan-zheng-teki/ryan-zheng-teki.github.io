@@ -1,6 +1,6 @@
 import React from "react";
 import { HomePage, Blogs, AboutMe } from "./pages";
-import { Header, QuillEditor } from "./components";
+import { Header } from "./components";
 import "./App.scss";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -21,7 +21,6 @@ function App() {
           </Route>
         </Switch>
       </div>
-      <QuillEditor/>
     </Router>
   );
 }

@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 
 module.exports = {
-    mode: 'production',
+    mode: 'development',
     entry: './src/index',
     devtool: 'inline-source-map',
     output: {
@@ -11,15 +11,16 @@ module.exports = {
         filename: 'app.bundle.js'
     },
     resolve: {
-        extensions: ['.js', '.jsx'],
+        modules: ['node_modules', 'src'],
+        extensions: ['.js', '.jsx','.ts','.tsx'],
         alias: {
-            components: path.resolve(__dirname, 'src/components/'),
-            config: path.resolve(__dirname, 'src/config/'),
+            AppComponents: path.resolve(__dirname, 'src/components/'),
+            AppConfig: path.resolve(__dirname, 'src/config/'),
         }
     },
     module: {
         rules: [{
-            test: /\.(js|jsx)$/,
+            test: /\.(js|jsx|ts|tsx)$/,
             loader: 'babel-loader',
             exclude: [
                 '/node_modules/',

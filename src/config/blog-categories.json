@@ -11,5 +11,6 @@
     "frameworks": {
         "spring": "/spring",
         "django" : "/django"
-    }
+    },
+    "videostreaming": "/videostreaming"
 }

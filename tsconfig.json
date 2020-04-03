@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist",
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "module": "esnext",
+        "jsx": "react",
+        "lib": ["es2017", "dom", "esnext"],
+        "target": "es6",
+    },
+    "include": [
+        "src"
+    ],
+    "baseUrl": "src",
+    "paths": {
+    },
+    "exclude": ["node_modules", "dist"] // *** The files to not type check,why since src is specified***
+}
