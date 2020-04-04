@@ -3,17 +3,21 @@
         <CV to="cv" text="CV"></CV>
         <Nlp to="cv" text="Nlp"></Nlp>
     </MachineLearning>
-    <ProgrammingLanguage to="programminglanguages" text="Programming languages">
+    <ProgrammingLanguages to="programminglanguages" text="Programming languages">
                 <Python to="python" text="Python">
                 </Python>
                 <Javascript to="javascript" text="Javascript">
                 </Javascript>
                 <Java to="Java" text="Java">
                 </Java>
-    </ProgrammingLanguage>
+    </ProgrammingLanguages>
     <Frameworks to="Frameworks" text="Frameworks">
-        <Spring to="Spring" text="Spring"/>
-        <React to="React" text="React"/>
-        <Angular to="Angular" text="Angular"/>
+        <Frontend to="Frontend" text="Frontend">
+            <Spring to="Spring" text="Spring"/>
+        </Frontend>
+        <Backend to="Backend" text="Backend">
+            <React to="React" text="React"/>
+            <Angular to="Angular" text="Angular"/>
+        </Backend> 
     </Frameworks>
 </categories>

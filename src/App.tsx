@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { HomePage, Blogs, AboutMe } from "./pages";
 import { Header } from "./components";
 import "./App.scss";

@@ -1,6 +1,7 @@
 export interface BlogCategoryModel
 {     
-    link: string;    
+    link?: string;    
     text: string; 
-    children: BlogCategoryModel[];
+    children?: BlogCategoryModel[];
+    parent?: BlogCategoryModel;
 }

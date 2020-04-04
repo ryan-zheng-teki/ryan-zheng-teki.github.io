@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import parser from 'fast-xml-parser';
 import he from 'he';
 import blog_categories from 'AppConfig/blog-categories.xml';
@@ -32,15 +33,25 @@ export function loadBlogCategories(): BlogCategoryModel {
 }
 
 function buildBlogCategoriesModel(categories: any) {
-    while(true) {
-        Object.keys(categories).forEach(key => {
-            if(key === 'attr') {
-                let blogCategory = {
-                    link: categories[key].attr.to,
-                    text: categories[key].attr.text,
-                }
+
+    //initialize the variables
+    let next = null;
+    let parent = null;
+    let sibling = null;
+
+    while(next != null) {
+        let keys: string[] = Object.keys(next);
+
+        //this node is a leaf node.
+        if(keys.length == 1) {
+            let blogCategory: BlogCategoryModel = {
+                link: categories[keys[0]].to,
+                text: categories[keys[0]].text,
             }
-        })
+            blogCategory.parent = parent;
+            next = null;
+        }
     }
-    
 }
+
+

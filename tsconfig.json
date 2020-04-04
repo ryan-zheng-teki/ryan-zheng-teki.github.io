@@ -7,12 +7,17 @@
         "jsx": "react",
         "lib": ["es2017", "dom", "esnext"],
         "target": "es6",
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
     },
     "include": [
         "src"
     ],
     "baseUrl": "src",
     "paths": {
+        "AppComponents": "src/components",
+        "AppConfig": "src/config",
+        "Assets": "src/assets",
     },
     "exclude": ["node_modules", "dist"] // *** The files to not type check,why since src is specified***
 }

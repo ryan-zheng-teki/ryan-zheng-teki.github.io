@@ -1,14 +1,17 @@
-import React from 'react';
-import { BlogCategoryNavigator } from 'AppComponents';
+import * as React from 'react';
+import { BlogCategoryNavigator, MarkdownDisplayer } from 'AppComponents';
 export class Blogs extends React.Component {
-    constructor(props) {
+    constructor(props: any) {
         super(props);
         this.state = {}
     }
     
     render() {
         return (
-            <BlogCategoryNavigator/>
+            <React.Fragment>
+                <BlogCategoryNavigator/>
+                <MarkdownDisplayer />
+            </React.Fragment>
         );
     }
 }
