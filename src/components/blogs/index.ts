@@ -1,3 +1,3 @@
 import { BlogCategoryNavigator } from './BlogCategoryNavigator';
-
-export { BlogCategoryNavigator };
+import { BlogContent } from './BlogContent';
+export { BlogCategoryNavigator, BlogContent };

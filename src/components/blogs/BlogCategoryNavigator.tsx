@@ -10,8 +10,12 @@ export class BlogCategoryNavigator extends React.Component<{},{}> {
     createNavigationMenus() {
         let categoryXml = BlogCategoryService.loadBlogCategories();
         let rootElement = BlogCategoryService.buildBlogCategoryMenu(categoryXml);
-        return rootElement;
+        let childrenElements =  rootElement.children.map(function(val: WorkNode, index:any){ 
+            return val.reactElement;
+            });
+        return  React.createElement('ul',null, childrenElements);
     }
+
 
     render() {
         return this.createNavigationMenus();

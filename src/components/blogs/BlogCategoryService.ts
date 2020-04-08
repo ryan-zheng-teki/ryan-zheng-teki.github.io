@@ -79,7 +79,7 @@ export function buildBlogCategoryMenu(categoryXml: any):any {
         nextWork = beginWork(nextWork);
     }
 
-    return rootNode.reactElement;
+    return rootNode;
 }
 
 function beginWork(currentNode: WorkNode): WorkNode {

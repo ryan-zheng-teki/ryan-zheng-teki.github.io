@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { BlogCategoryNavigator, MarkdownDisplayer } from 'AppComponents';
+import { BlogCategoryNavigator, BlogContent } from 'AppComponents';
 export class Blogs extends React.Component {
     constructor(props: any) {
         super(props);
         this.state = {}
-    }
+    } 
 
     /* TODO:
     (1)build a nested ul for categories.
@@ -15,9 +15,12 @@ export class Blogs extends React.Component {
     
     render() {
         return (
-            <React.Fragment>
-                <BlogCategoryNavigator/>
-            </React.Fragment>
+            <div className="page__blog">
+                <div className="blog__navigator">
+                    <BlogCategoryNavigator/>
+                </div>
+                <BlogContent />
+            </div>
         );
     }
 }
