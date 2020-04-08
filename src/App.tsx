@@ -1,6 +1,6 @@
-import * as React from "react";
+import React from "react";
 import { HomePage, Blogs, AboutMe } from "./pages";
-import { Header } from "./components";
+import { Header, Footer } from "./components";
 import "./App.scss";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -20,6 +20,7 @@ function App() {
             <Blogs />
           </Route>
         </Switch>
+        <Footer/>
       </div>
     </Router>
   );

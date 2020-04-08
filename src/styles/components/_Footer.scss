@@ -1,0 +1,13 @@
+.footer {
+    position: absolute;
+    bottom: 0;
+    height: 5vw;
+    transform: rotate(-25deg);
+}
+
+@keyframes shake {
+    50% {
+        right: 50%;
+        transform: rotate(25deg);
+    }
+}

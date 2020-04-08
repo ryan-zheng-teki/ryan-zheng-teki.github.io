@@ -17,7 +17,6 @@ module.exports = {
             AppComponents: path.resolve(__dirname, 'src/components/'),
             AppConfig: path.resolve(__dirname, 'src/config/'),
             Assets: path.resolve(__dirname, 'src/assets/'),
-
         }
     },
     module: {
@@ -37,7 +36,7 @@ module.exports = {
             use: 'raw-loader',
         },
         {
-            test: /\.(png|jpeg|svg|gif)$/,
+            test: /\.(png|jpeg|svg|gif|xml)$/,
             loader: 'file-loader',
             options: {
                 outputPath: 'assets',

@@ -13,9 +13,6 @@ export function Header() {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/">Life</Link>
-                </li>
-                <li>
                     <Link to="/about">About Me</Link>
                 </li>
             </ul>

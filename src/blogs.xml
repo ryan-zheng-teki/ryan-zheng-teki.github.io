@@ -1,0 +1,56 @@
+<blogs>
+     <database>
+          <cassandra>
+               <File>
+                  <name>CassandraDataModel.md</name>
+                  <path>/Users/ryan.zheng/Learning/techblogs/tech-blogs/src/blogs/database/cassandra/CassandraDataModel.md</path>
+                  <createdTime>Mon Apr 06 2020 20:52:36 GMT+0200 (GMT+02:00)</createdTime>
+                  <modifiedTime>Mon Apr 06 2020 20:52:36 GMT+0200 (GMT+02:00)</modifiedTime>
+               </File>
+          </cassandra>
+          <mysql>
+          </mysql>
+     </database>
+     <frameworks>
+          <backend>
+               <django>
+               </django>
+               <springboot>
+                    <File>
+                       <name>How Does Spring Configuration Work.md</name>
+                       <path>/Users/ryan.zheng/Learning/techblogs/tech-blogs/src/blogs/frameworks/backend/springboot/How Does Spring Configuration Work.md</path>
+                       <createdTime>Sat Apr 04 2020 15:52:36 GMT+0200 (GMT+02:00)</createdTime>
+                       <modifiedTime>Sat Apr 04 2020 15:52:36 GMT+0200 (GMT+02:00)</modifiedTime>
+                    </File>
+               </springboot>
+          </backend>
+          <frontend>
+               <angular>
+               </angular>
+               <react>
+                    <File>
+                       <name>React ELement.md</name>
+                       <path>/Users/ryan.zheng/Learning/techblogs/tech-blogs/src/blogs/frameworks/frontend/react/React ELement.md</path>
+                       <createdTime>Sat Apr 04 2020 17:21:21 GMT+0200 (GMT+02:00)</createdTime>
+                       <modifiedTime>Sat Apr 04 2020 17:21:21 GMT+0200 (GMT+02:00)</modifiedTime>
+                    </File>
+               </react>
+          </frontend>
+     </frameworks>
+     <linuxKernel>
+     </linuxKernel>
+     <machineLearning>
+          <cv>
+          </cv>
+          <nlp>
+          </nlp>
+     </machineLearning>
+     <programmingLanguages>
+          <java>
+          </java>
+          <javascript>
+          </javascript>
+          <python>
+          </python>
+     </programmingLanguages>
+</blogs>

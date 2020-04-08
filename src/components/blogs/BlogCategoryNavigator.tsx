@@ -1,18 +1,19 @@
 import React from 'react';
-import blog_categories from 'AppConfig/blog-categories.json';
-import { BlogCategoryModel } from './BlogCategoryModel';
+import { WorkNode } from './WorkNode';
 import * as BlogCategoryService from './BlogCategoryService';
 
-export class BlogCategoryNavigator extends React.Component<{},BlogCategoryModel> {
+export class BlogCategoryNavigator extends React.Component<{},{}> {
     constructor(props: any) {
         super(props);
     }
 
-    componentDidMount() {
-        BlogCategoryService.loadBlogCategories();
+    createNavigationMenus() {
+        let categoryXml = BlogCategoryService.loadBlogCategories();
+        let rootElement = BlogCategoryService.buildBlogCategoryMenu(categoryXml);
+        return rootElement;
     }
 
     render() {
-        return '';
+        return this.createNavigationMenus();
     }   
 }
