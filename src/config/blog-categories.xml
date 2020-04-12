@@ -1,56 +1,120 @@
 <blogs>
-     <database>
+     <Algorithms>
+     </Algorithms>
+     <Database>
+          <Redis>
+               <File>
+                  <name>Why Redis Is Fast.md</name>
+                  <path>./src/blogs/Database/Redis/Why Redis Is Fast.md</path>
+                  <createdTime>Fri Apr 10 2020 08:58:05 GMT+0200 (GMT+02:00)</createdTime>
+                  <modifiedTime>Fri Apr 10 2020 08:58:05 GMT+0200 (GMT+02:00)</modifiedTime>
+               </File>
+          </Redis>
           <cassandra>
                <File>
                   <name>Cassandra Data Model.md</name>
-                  <path>./src/blogs/database/cassandra/Cassandra Data Model.md</path>
+                  <path>./src/blogs/Database/cassandra/Cassandra Data Model.md</path>
                   <createdTime>Tue Apr 07 2020 21:13:07 GMT+0200 (GMT+02:00)</createdTime>
                   <modifiedTime>Tue Apr 07 2020 21:13:07 GMT+0200 (GMT+02:00)</modifiedTime>
                </File>
           </cassandra>
           <mysql>
           </mysql>
-     </database>
-     <frameworks>
-          <backend>
-               <django>
-               </django>
-               <springboot>
+     </Database>
+     <Frameworks>
+          <Backend>
+               <Django>
+               </Django>
+               <Hibernate>
+                    <File>
+                       <name>Multithreading Session Factory.md</name>
+                       <path>./src/blogs/Frameworks/Backend/Hibernate/Multithreading Session Factory.md</path>
+                       <createdTime>Wed Apr 08 2020 19:18:46 GMT+0200 (GMT+02:00)</createdTime>
+                       <modifiedTime>Wed Apr 08 2020 19:18:46 GMT+0200 (GMT+02:00)</modifiedTime>
+                    </File>
+               </Hibernate>
+               <SpringBoot>
                     <File>
                        <name>How Does Spring Configuration Work.md</name>
-                       <path>./src/blogs/frameworks/backend/springboot/How Does Spring Configuration Work.md</path>
+                       <path>./src/blogs/Frameworks/Backend/SpringBoot/How Does Spring Configuration Work.md</path>
                        <createdTime>Sat Apr 04 2020 15:52:36 GMT+0200 (GMT+02:00)</createdTime>
                        <modifiedTime>Sat Apr 04 2020 15:52:36 GMT+0200 (GMT+02:00)</modifiedTime>
                     </File>
-               </springboot>
-          </backend>
-          <frontend>
-               <angular>
-               </angular>
-               <react>
-                    <File>
-                       <name>React ELement.md</name>
-                       <path>./src/blogs/frameworks/frontend/react/React ELement.md</path>
-                       <createdTime>Sat Apr 04 2020 17:21:21 GMT+0200 (GMT+02:00)</createdTime>
-                       <modifiedTime>Sat Apr 04 2020 17:21:21 GMT+0200 (GMT+02:00)</modifiedTime>
-                    </File>
-               </react>
-          </frontend>
-     </frameworks>
-     <linuxKernel>
-     </linuxKernel>
-     <machineLearning>
-          <cv>
-          </cv>
-          <nlp>
-          </nlp>
-     </machineLearning>
-     <programmingLanguages>
-          <java>
-          </java>
-          <javascript>
-          </javascript>
-          <python>
-          </python>
-     </programmingLanguages>
+               </SpringBoot>
+          </Backend>
+          <Frontend>
+               <Angular>
+               </Angular>
+               <React>
+                    <ReactSourceCodeAnalysis>
+                         <File>
+                            <name>Part 1 React ELement.md</name>
+                            <path>./src/blogs/Frameworks/Frontend/React/ReactSourceCodeAnalysis/Part 1 React ELement.md</path>
+                            <createdTime>Wed Apr 08 2020 19:10:00 GMT+0200 (GMT+02:00)</createdTime>
+                            <modifiedTime>Wed Apr 08 2020 19:10:00 GMT+0200 (GMT+02:00)</modifiedTime>
+                         </File>
+                         <File>
+                            <name>Part 2 React Fiber Tree.md</name>
+                            <path>./src/blogs/Frameworks/Frontend/React/ReactSourceCodeAnalysis/Part 2 React Fiber Tree.md</path>
+                            <createdTime>Wed Apr 08 2020 19:09:52 GMT+0200 (GMT+02:00)</createdTime>
+                            <modifiedTime>Wed Apr 08 2020 19:09:52 GMT+0200 (GMT+02:00)</modifiedTime>
+                         </File>
+                         <File>
+                            <name>Part 3 React FiberWork Phases.md</name>
+                            <path>./src/blogs/Frameworks/Frontend/React/ReactSourceCodeAnalysis/Part 3 React FiberWork Phases.md</path>
+                            <createdTime>Wed Apr 08 2020 19:10:17 GMT+0200 (GMT+02:00)</createdTime>
+                            <modifiedTime>Wed Apr 08 2020 19:10:17 GMT+0200 (GMT+02:00)</modifiedTime>
+                         </File>
+                         <File>
+                            <name>Part 4 React Scheduler.md</name>
+                            <path>./src/blogs/Frameworks/Frontend/React/ReactSourceCodeAnalysis/Part 4 React Scheduler.md</path>
+                            <createdTime>Wed Apr 08 2020 19:10:27 GMT+0200 (GMT+02:00)</createdTime>
+                            <modifiedTime>Wed Apr 08 2020 19:10:27 GMT+0200 (GMT+02:00)</modifiedTime>
+                         </File>
+                    </ReactSourceCodeAnalysis>
+               </React>
+          </Frontend>
+          <GraphQL>
+               <File>
+                  <name>GraphQL VS Redux With Rest.md</name>
+                  <path>./src/blogs/Frameworks/GraphQL/GraphQL VS Redux With Rest.md</path>
+                  <createdTime>Fri Apr 10 2020 19:05:10 GMT+0200 (GMT+02:00)</createdTime>
+                  <modifiedTime>Fri Apr 10 2020 19:05:10 GMT+0200 (GMT+02:00)</modifiedTime>
+               </File>
+               <File>
+                  <name>Graphql Service Worker IndexDB Client Caching.md</name>
+                  <path>./src/blogs/Frameworks/GraphQL/Graphql Service Worker IndexDB Client Caching.md</path>
+                  <createdTime>Fri Apr 10 2020 10:31:49 GMT+0200 (GMT+02:00)</createdTime>
+                  <modifiedTime>Fri Apr 10 2020 10:31:49 GMT+0200 (GMT+02:00)</modifiedTime>
+               </File>
+          </GraphQL>
+     </Frameworks>
+     <LinuxKernel>
+          <File>
+             <name>CompileLinuxKernel.md</name>
+             <path>./src/blogs/LinuxKernel/CompileLinuxKernel.md</path>
+             <createdTime>Wed Apr 08 2020 19:05:27 GMT+0200 (GMT+02:00)</createdTime>
+             <modifiedTime>Wed Apr 08 2020 19:05:27 GMT+0200 (GMT+02:00)</modifiedTime>
+          </File>
+     </LinuxKernel>
+     <MachineLearning>
+          <CV>
+          </CV>
+          <NLP>
+          </NLP>
+     </MachineLearning>
+     <ProgrammingLanguages>
+          <Java>
+          </Java>
+          <Javascript>
+               <File>
+                  <name>PWA In Practice.md</name>
+                  <path>./src/blogs/ProgrammingLanguages/Javascript/PWA In Practice.md</path>
+                  <createdTime>Fri Apr 10 2020 18:35:57 GMT+0200 (GMT+02:00)</createdTime>
+                  <modifiedTime>Fri Apr 10 2020 18:35:57 GMT+0200 (GMT+02:00)</modifiedTime>
+               </File>
+          </Javascript>
+          <Python>
+          </Python>
+     </ProgrammingLanguages>
 </blogs>

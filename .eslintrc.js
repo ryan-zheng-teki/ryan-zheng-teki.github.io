@@ -27,5 +27,6 @@ module.exports = {
     "rules": {
         "no-unused-vars": true,
         "no-empty": false,
+        "import/no-unresolved": 0,
     },
 };

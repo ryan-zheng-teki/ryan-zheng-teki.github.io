@@ -8,9 +8,10 @@ the editing, I could save the content in harddisk. In Javascript its not possibl
 tool in nodejs for processing these files. Generate one xml file which contains all the blogs 
 
 ### Design
+(1) All the technical blogs are written in Markdown files. Inside the specific folders. I created a nodejs npm package folder-to-xml
+to convert the folder structure dynamically into xml file.
+(2) When React is starting, it reads the xml files. And Render the categories based on the tree structure for folder structure.
+(3) When user click a folder which contains files, React will import those files dynamically into Client cache.
+(4) I used serviceWorker thread to import Md Files before hand. And then these files are pushed to the UI thread for rendering. I stored the files 
+in IndexDB for client caching.
 
-(1) Create a NodeJS tool to convert all the blogs into one xml. This xml contains the files information for the blogs.This
-    xml file also contains the creationDate of the file. Use XML file to store the blog contents.
-(2) Dynamically load this xml file during user navigation
-(3) Dynamically load the blog file into a React Component for showing the content.This component could be MarkdownDisplay
-    or RichtextEditor Displayer.

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BlogCategoryNavigator, BlogContent } from 'AppComponents';
+import { BlogCategoryNavigator, BlogContent, BlogDateSelector } from 'AppComponents';
 export class Blogs extends React.Component {
     constructor(props: any) {
         super(props);
@@ -16,10 +16,9 @@ export class Blogs extends React.Component {
     render() {
         return (
             <div className="page__blog">
-                <div className="blog__navigator">
-                    <BlogCategoryNavigator/>
-                </div>
+                <BlogCategoryNavigator/>
                 <BlogContent />
+                <BlogDateSelector />
             </div>
         );
     }

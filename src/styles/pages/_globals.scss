@@ -1,6 +1,9 @@
 html, body {
     height: 100%;
     box-sizing: border-box;
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-size: 18px;
+    line-height: 1.6rem;
 }
 
 
@@ -10,7 +13,5 @@ ul {
 }
 
 #root {
-    display:flex;
-    flex-direction:column;
     height: 100%;
 }
