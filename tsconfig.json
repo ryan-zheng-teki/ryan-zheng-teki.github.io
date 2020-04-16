@@ -13,11 +13,11 @@
     "include": [
         "src"
     ],
-    "baseUrl": "src",
+    "baseUrl": ".",
     "paths": {
-        "AppComponents": "src/components",
-        "AppConfig": "src/config",
-        "Assets": "src/assets",
+        "AppComponents/*": "src/components/*",
+        "AppConfig/*": "src/config/*",
+        "Assets/*": "src/assets/*",
     },
     "exclude": ["node_modules", "dist"] // *** The files to not type check,why since src is specified***
 }

@@ -1,9 +1,13 @@
 import * as React from 'react';
-import { BlogCategoryNavigator, BlogContent, BlogDateSelector } from 'AppComponents';
-export class Blogs extends React.Component {
+import { BlogCategoryNavigator, BlogContent, BlogDateSelector, CurrentCategoryProvider } from 'AppComponents';
+import { WorkNode } from '../components/blog/types';
+
+export class Blogs extends React.Component<{},{currentCategory: WorkNode}> {
     constructor(props: any) {
         super(props);
-        this.state = {}
+        this.state = {
+            currentCategory: null,
+        }
     } 
 
     /* TODO:
@@ -16,8 +20,10 @@ export class Blogs extends React.Component {
     render() {
         return (
             <div className="page__blog">
-                <BlogCategoryNavigator/>
-                <BlogContent />
+                <CurrentCategoryProvider>
+                    <BlogCategoryNavigator/>
+                    <BlogContent />
+                </CurrentCategoryProvider>
                 <BlogDateSelector />
             </div>
         );

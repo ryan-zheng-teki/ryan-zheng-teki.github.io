@@ -1,10 +1,15 @@
 module.exports = {
-    "env": {
-        "browser": true,
-        "es6": true
+    env: {
+        browser: true,
+        es6: true
+    },
+    "settings":  {
+        react:  {
+          version:  'detect',  // Tells eslint-plugin-react to automatically detect the version of React to use
+        }
     },
     "extends": [
-        "eslint:recommended",
+        "eslint:recommended",//syntax specification
         "plugin:react/recommended",
         "plugin:@typescript-eslint/eslint-recommended"
     ],
@@ -13,12 +18,14 @@ module.exports = {
         "SharedArrayBuffer": "readonly"
     },
     "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "modules": true
+    parserOptions: {
+        ecmaFeatures: {
+            modules: true
         },
-        "ecmaVersion": 2018,
-        "sourceType": "module"
+        ecmaVersion: 2018,
+        sourceType: "module",
+        project: './tsconfig.json',
+
     },
     "plugins": [
         "react",

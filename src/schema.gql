@@ -1,0 +1,7 @@
+type Query {
+    currentSelectedCategory: String
+}
+
+type Mutation {
+    updateCurrentSelectedCategory(update: String!): String
+}

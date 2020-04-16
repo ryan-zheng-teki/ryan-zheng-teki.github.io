@@ -1,5 +1,6 @@
 import React from 'react';
 import { WorkNode } from '../types';
+import { CurrentCategoryContext } from 'AppComponents';
 
 export class BlogContent extends React.Component<{},{}> {
     constructor(props: any) {
@@ -18,7 +19,21 @@ export class BlogContent extends React.Component<{},{}> {
     }
 
 
+    /*
+    Here i should call apollo useQuery hook cache only method to get the currently selected category.
+    If there is no selected category, then i should fire another query to get the latest 5 blogs and show them here
+    */
     render() {
-        return <p className='blogContent'>Still considering what to show here</p>
+        return (
+            <CurrentCategoryContext.Consumer>
+                {(currentCategory: WorkNode) => {
+                    if(currentCategory == null) {
+                        return <p> Still consider what to show</p>
+                    } else {
+                        return <p>Show the current category</p>
+                    }
+                }}
+            </CurrentCategoryContext.Consumer>
+        );
     }
 }
