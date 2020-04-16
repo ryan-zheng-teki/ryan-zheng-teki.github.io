@@ -264,3 +264,23 @@ function navigateToFile(path:string) {
     */
    console.log('file path is', path);
 }
+
+export function getFileNodePath(fileNode: WorkNode): string {
+    let currentNode = fileNode.parentNode;
+    let path = fileNode.name;
+    while(currentNode != null) {
+        path = currentNode.name + '/' + path;
+        currentNode = currentNode.parentNode;
+    }
+    return path;
+}
+
+export function getFileName(fileNode: WorkNode) {
+    const fileName = fileNode.name;
+    return fileName.substr(0, fileName.indexOf('.')); 
+}
+
+//does this mean that this one contains a member which is a callback function
+export interface UpdateReadBlog {
+	(_: WorkNode): void;
+}

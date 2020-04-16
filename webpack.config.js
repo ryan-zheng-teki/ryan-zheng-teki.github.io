@@ -17,6 +17,7 @@ module.exports = {
             AppComponents: path.resolve(__dirname, 'src/components/'),
             AppConfig: path.resolve(__dirname, 'src/config/'),
             Assets: path.resolve(__dirname, 'src/assets/'),
+            Blogs: path.resolve(__dirname, 'src/'),
         }
     },
     module: {
@@ -33,7 +34,7 @@ module.exports = {
             use: ['style-loader', 'css-loader', 'sass-loader'],
         },
         {
-            test: /\.xml$/i,
+            test: /\.(xml|md)$/i,
             use: 'raw-loader',
         },
         {

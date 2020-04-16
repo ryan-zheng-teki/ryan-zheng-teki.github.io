@@ -48,12 +48,6 @@
                <React>
                     <ReactSourceCodeAnalysis>
                          <File>
-                            <name>Part 1 React ELement.md</name>
-                            <path>./src/blogs/Frameworks/Frontend/React/ReactSourceCodeAnalysis/Part 1 React ELement.md</path>
-                            <createdTime>Wed Apr 08 2020 19:10:00 GMT+0200 (GMT+02:00)</createdTime>
-                            <modifiedTime>Wed Apr 08 2020 19:10:00 GMT+0200 (GMT+02:00)</modifiedTime>
-                         </File>
-                         <File>
                             <name>Part 2 React Fiber Tree.md</name>
                             <path>./src/blogs/Frameworks/Frontend/React/ReactSourceCodeAnalysis/Part 2 React Fiber Tree.md</path>
                             <createdTime>Wed Apr 08 2020 19:09:52 GMT+0200 (GMT+02:00)</createdTime>
@@ -68,8 +62,14 @@
                          <File>
                             <name>Part 4 React Scheduler.md</name>
                             <path>./src/blogs/Frameworks/Frontend/React/ReactSourceCodeAnalysis/Part 4 React Scheduler.md</path>
-                            <createdTime>Wed Apr 08 2020 19:10:27 GMT+0200 (GMT+02:00)</createdTime>
-                            <modifiedTime>Wed Apr 08 2020 19:10:27 GMT+0200 (GMT+02:00)</modifiedTime>
+                            <createdTime>Thu Apr 16 2020 19:16:00 GMT+0200 (GMT+02:00)</createdTime>
+                            <modifiedTime>Thu Apr 16 2020 19:16:00 GMT+0200 (GMT+02:00)</modifiedTime>
+                         </File>
+                         <File>
+                            <name>Part1 React Element.md</name>
+                            <path>./src/blogs/Frameworks/Frontend/React/ReactSourceCodeAnalysis/Part1 React Element.md</path>
+                            <createdTime>Thu Apr 16 2020 19:17:01 GMT+0200 (GMT+02:00)</createdTime>
+                            <modifiedTime>Thu Apr 16 2020 19:17:01 GMT+0200 (GMT+02:00)</modifiedTime>
                          </File>
                     </ReactSourceCodeAnalysis>
                </React>
