@@ -22,20 +22,6 @@ module.exports = {
     module: {
         rules: [
         {
-            test: /\.(ts|tsx)$/,
-            enforce: 'pre',
-            use: [
-                {
-                    options: {
-                        eslintPath: require.resolve('eslint'),
-        
-                },
-                loader: require.resolve('eslint-loader'),
-                },
-            ],
-            exclude: /node_modules/,
-        },
-        {
             test: /\.(js|jsx|ts|tsx)$/,
             loader: 'babel-loader',
             exclude: [
