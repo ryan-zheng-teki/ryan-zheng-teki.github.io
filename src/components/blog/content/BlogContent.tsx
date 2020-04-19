@@ -49,6 +49,11 @@ export class BlogContent extends React.Component<{}, {currentReadBlog: WorkNode}
             .then((content) => {
                 console.log(content);
             });
+
+            import(filePath)
+            .then((content) => {
+                console.log(content);
+            });
         }
     }
 
