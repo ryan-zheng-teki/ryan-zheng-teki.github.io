@@ -1,13 +1,5 @@
 <blogs>
      <Backend>
-          <Hibernate>
-               <File>
-                  <name>Multithreading Session Factory.md</name>
-                  <path>./src/blogs/Backend/Hibernate/Multithreading Session Factory.md</path>
-                  <createdTime>Thu Apr 16 2020 19:15:22 GMT+0000 (GMT)</createdTime>
-                  <modifiedTime>Thu Apr 16 2020 19:15:22 GMT+0000 (GMT)</modifiedTime>
-               </File>
-          </Hibernate>
           <SpringBoot>
                <File>
                   <name>How Does Spring Configuration Work.md</name>
@@ -17,24 +9,6 @@
                </File>
           </SpringBoot>
      </Backend>
-     <Database>
-          <Redis>
-               <File>
-                  <name>Why Redis Is Fast.md</name>
-                  <path>./src/blogs/Database/Redis/Why Redis Is Fast.md</path>
-                  <createdTime>Thu Apr 16 2020 19:15:22 GMT+0000 (GMT)</createdTime>
-                  <modifiedTime>Thu Apr 16 2020 19:15:22 GMT+0000 (GMT)</modifiedTime>
-               </File>
-          </Redis>
-          <cassandra>
-               <File>
-                  <name>Cassandra Data Model.md</name>
-                  <path>./src/blogs/Database/cassandra/Cassandra Data Model.md</path>
-                  <createdTime>Thu Apr 16 2020 19:15:22 GMT+0000 (GMT)</createdTime>
-                  <modifiedTime>Thu Apr 16 2020 19:15:22 GMT+0000 (GMT)</modifiedTime>
-               </File>
-          </cassandra>
-     </Database>
      <Frontend>
           <GraphQL>
                <File>
@@ -51,32 +25,30 @@
                </File>
           </GraphQL>
           <React>
-               <ReactSourceCodeAnalysis>
-                    <File>
-                       <name>Part 2 React Fiber Tree.md</name>
-                       <path>./src/blogs/Frontend/React/ReactSourceCodeAnalysis/Part 2 React Fiber Tree.md</path>
-                       <createdTime>Thu Apr 16 2020 19:15:22 GMT+0000 (GMT)</createdTime>
-                       <modifiedTime>Thu Apr 16 2020 19:15:22 GMT+0000 (GMT)</modifiedTime>
-                    </File>
-                    <File>
-                       <name>Part 3 React FiberWork Phases.md</name>
-                       <path>./src/blogs/Frontend/React/ReactSourceCodeAnalysis/Part 3 React FiberWork Phases.md</path>
-                       <createdTime>Thu Apr 16 2020 19:15:22 GMT+0000 (GMT)</createdTime>
-                       <modifiedTime>Thu Apr 16 2020 19:15:22 GMT+0000 (GMT)</modifiedTime>
-                    </File>
-                    <File>
-                       <name>Part 4 React Scheduler.md</name>
-                       <path>./src/blogs/Frontend/React/ReactSourceCodeAnalysis/Part 4 React Scheduler.md</path>
-                       <createdTime>Thu Apr 16 2020 19:15:22 GMT+0000 (GMT)</createdTime>
-                       <modifiedTime>Thu Apr 16 2020 19:15:22 GMT+0000 (GMT)</modifiedTime>
-                    </File>
-                    <File>
-                       <name>Part1 React Element.md</name>
-                       <path>./src/blogs/Frontend/React/ReactSourceCodeAnalysis/Part1 React Element.md</path>
-                       <createdTime>Thu Apr 16 2020 19:15:22 GMT+0000 (GMT)</createdTime>
-                       <modifiedTime>Thu Apr 16 2020 19:15:22 GMT+0000 (GMT)</modifiedTime>
-                    </File>
-               </ReactSourceCodeAnalysis>
+               <File>
+                  <name>Part 2 React Fiber Tree.md</name>
+                  <path>./src/blogs/Frontend/React/Part 2 React Fiber Tree.md</path>
+                  <createdTime>Sun Apr 19 2020 08:14:07 GMT+0000 (GMT)</createdTime>
+                  <modifiedTime>Sun Apr 19 2020 08:14:07 GMT+0000 (GMT)</modifiedTime>
+               </File>
+               <File>
+                  <name>Part 3 React FiberWork Phases.md</name>
+                  <path>./src/blogs/Frontend/React/Part 3 React FiberWork Phases.md</path>
+                  <createdTime>Sun Apr 19 2020 08:14:07 GMT+0000 (GMT)</createdTime>
+                  <modifiedTime>Sun Apr 19 2020 08:14:07 GMT+0000 (GMT)</modifiedTime>
+               </File>
+               <File>
+                  <name>Part 4 React Scheduler.md</name>
+                  <path>./src/blogs/Frontend/React/Part 4 React Scheduler.md</path>
+                  <createdTime>Sun Apr 19 2020 08:14:07 GMT+0000 (GMT)</createdTime>
+                  <modifiedTime>Sun Apr 19 2020 08:14:07 GMT+0000 (GMT)</modifiedTime>
+               </File>
+               <File>
+                  <name>Part1 React Element.md</name>
+                  <path>./src/blogs/Frontend/React/Part1 React Element.md</path>
+                  <createdTime>Sun Apr 19 2020 08:14:07 GMT+0000 (GMT)</createdTime>
+                  <modifiedTime>Sun Apr 19 2020 08:14:07 GMT+0000 (GMT)</modifiedTime>
+               </File>
           </React>
      </Frontend>
      <LinuxKernel>
@@ -87,8 +59,24 @@
              <modifiedTime>Thu Apr 16 2020 18:57:03 GMT+0000 (GMT)</modifiedTime>
           </File>
      </LinuxKernel>
+     <ORM>
+          <Hibernate>
+               <File>
+                  <name>Multithreading Session Factory.md</name>
+                  <path>./src/blogs/ORM/Hibernate/Multithreading Session Factory.md</path>
+                  <createdTime>Thu Apr 16 2020 19:15:22 GMT+0000 (GMT)</createdTime>
+                  <modifiedTime>Thu Apr 16 2020 19:15:22 GMT+0000 (GMT)</modifiedTime>
+               </File>
+          </Hibernate>
+     </ORM>
      <ProgrammingLanguages>
           <Javascript>
+               <File>
+                  <name>Event Loop Insiders.md</name>
+                  <path>./src/blogs/ProgrammingLanguages/Javascript/Event Loop Insiders.md</path>
+                  <createdTime>Sun Apr 19 2020 06:14:55 GMT+0000 (GMT)</createdTime>
+                  <modifiedTime>Sun Apr 19 2020 06:14:55 GMT+0000 (GMT)</modifiedTime>
+               </File>
                <File>
                   <name>PWA In Practice.md</name>
                   <path>./src/blogs/ProgrammingLanguages/Javascript/PWA In Practice.md</path>
