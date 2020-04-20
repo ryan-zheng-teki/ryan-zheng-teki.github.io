@@ -6,10 +6,10 @@ export function Header() {
     return (
         <div className="header">
             <img className='logo' src={logo} />
-            <ul className="category">
+            <ul className="header__right">
                 <li>
-                    <Link to="/blogs">
-                       Blogs
+                    <Link to="/create" className="header__right__newblog">
+                       Create Blog
                     </Link>
                 </li>
                 <li>

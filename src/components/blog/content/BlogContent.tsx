@@ -44,16 +44,6 @@ export class BlogContent extends React.Component<{}, {currentReadBlog: WorkNode}
         if(this.state.currentReadBlog != null) {
             const filePath = '../../../' + getFileNodePath(this.state.currentReadBlog);
             console.log(filePath);
-
-            import('../../../blogs/Frameworks/Frontend/React/ReactSourceCodeAnalysis/Part1 React Element.md')
-            .then((content) => {
-                console.log(content);
-            });
-
-            import(filePath)
-            .then((content) => {
-                console.log(content);
-            });
         }
     }
 

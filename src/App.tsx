@@ -1,6 +1,6 @@
 import React from "react";
 import { HomePage, Blogs, AboutMe } from "./pages";
-import { Header, Footer } from "./components";
+import { Header, Footer, QuillEditor } from "./components";
 import "./App.scss";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { InMemoryCache } from 'apollo-cache-inmemory';
@@ -27,13 +27,13 @@ function App() {
           <Header />
           <Switch>
             <Route exact path="/">
-              <HomePage />
+              <Blogs />
             </Route>
             <Route path="/about">
               <AboutMe />
             </Route>
-            <Route path="/blogs">
-              <Blogs />
+            <Route path="/create">
+              <QuillEditor />
             </Route>
           </Switch>
           <Footer/>

@@ -8,7 +8,7 @@
         height: auto;
     }
 
-    .category {
+    .header__right {
         align-items: center;
         flex: 1;
         justify-content: flex-end;
@@ -24,6 +24,12 @@
         li > a {
             display: inline-block;
             color: white;
+        }
+
+        .header__right__newblog {
+            border: none;
+            color: white;
+            background-color: #1b1e23;
         }
     }
 }

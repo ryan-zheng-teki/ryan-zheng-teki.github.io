@@ -1,53 +1,65 @@
 <blogs>
+     <Algorithms>
+     </Algorithms>
      <Backend>
+          <Django>
+          </Django>
           <SpringBoot>
                <File>
                   <name>How Does Spring Configuration Work.md</name>
                   <path>./src/blogs/Backend/SpringBoot/How Does Spring Configuration Work.md</path>
-                  <createdTime>Thu Apr 16 2020 19:15:22 GMT+0000 (GMT)</createdTime>
-                  <modifiedTime>Thu Apr 16 2020 19:15:22 GMT+0000 (GMT)</modifiedTime>
+                  <createdTime>Sun Apr 19 2020 08:16:19 GMT+0200 (GMT+02:00)</createdTime>
+                  <modifiedTime>Sun Apr 19 2020 08:16:19 GMT+0200 (GMT+02:00)</modifiedTime>
                </File>
           </SpringBoot>
      </Backend>
+     <Database>
+          <cassandra>
+          </cassandra>
+          <mysql>
+          </mysql>
+     </Database>
      <Frontend>
+          <Angular>
+          </Angular>
           <GraphQL>
                <File>
                   <name>GraphQL VS Redux With Rest.md</name>
                   <path>./src/blogs/Frontend/GraphQL/GraphQL VS Redux With Rest.md</path>
-                  <createdTime>Thu Apr 16 2020 19:15:22 GMT+0000 (GMT)</createdTime>
-                  <modifiedTime>Thu Apr 16 2020 19:15:22 GMT+0000 (GMT)</modifiedTime>
+                  <createdTime>Sun Apr 19 2020 08:16:19 GMT+0200 (GMT+02:00)</createdTime>
+                  <modifiedTime>Sun Apr 19 2020 08:16:19 GMT+0200 (GMT+02:00)</modifiedTime>
                </File>
                <File>
                   <name>Graphql Service Worker IndexDB Client Caching.md</name>
                   <path>./src/blogs/Frontend/GraphQL/Graphql Service Worker IndexDB Client Caching.md</path>
-                  <createdTime>Thu Apr 16 2020 19:15:22 GMT+0000 (GMT)</createdTime>
-                  <modifiedTime>Thu Apr 16 2020 19:15:22 GMT+0000 (GMT)</modifiedTime>
+                  <createdTime>Sun Apr 19 2020 08:16:19 GMT+0200 (GMT+02:00)</createdTime>
+                  <modifiedTime>Sun Apr 19 2020 08:16:19 GMT+0200 (GMT+02:00)</modifiedTime>
                </File>
           </GraphQL>
           <React>
                <File>
                   <name>Part 2 React Fiber Tree.md</name>
                   <path>./src/blogs/Frontend/React/Part 2 React Fiber Tree.md</path>
-                  <createdTime>Sun Apr 19 2020 08:14:07 GMT+0000 (GMT)</createdTime>
-                  <modifiedTime>Sun Apr 19 2020 08:14:07 GMT+0000 (GMT)</modifiedTime>
+                  <createdTime>Sun Apr 19 2020 10:25:32 GMT+0200 (GMT+02:00)</createdTime>
+                  <modifiedTime>Sun Apr 19 2020 10:25:32 GMT+0200 (GMT+02:00)</modifiedTime>
                </File>
                <File>
                   <name>Part 3 React FiberWork Phases.md</name>
                   <path>./src/blogs/Frontend/React/Part 3 React FiberWork Phases.md</path>
-                  <createdTime>Sun Apr 19 2020 08:14:07 GMT+0000 (GMT)</createdTime>
-                  <modifiedTime>Sun Apr 19 2020 08:14:07 GMT+0000 (GMT)</modifiedTime>
+                  <createdTime>Sun Apr 19 2020 10:25:32 GMT+0200 (GMT+02:00)</createdTime>
+                  <modifiedTime>Sun Apr 19 2020 10:25:32 GMT+0200 (GMT+02:00)</modifiedTime>
                </File>
                <File>
                   <name>Part 4 React Scheduler.md</name>
                   <path>./src/blogs/Frontend/React/Part 4 React Scheduler.md</path>
-                  <createdTime>Sun Apr 19 2020 08:14:07 GMT+0000 (GMT)</createdTime>
-                  <modifiedTime>Sun Apr 19 2020 08:14:07 GMT+0000 (GMT)</modifiedTime>
+                  <createdTime>Sun Apr 19 2020 10:25:32 GMT+0200 (GMT+02:00)</createdTime>
+                  <modifiedTime>Sun Apr 19 2020 10:25:32 GMT+0200 (GMT+02:00)</modifiedTime>
                </File>
                <File>
                   <name>Part1 React Element.md</name>
                   <path>./src/blogs/Frontend/React/Part1 React Element.md</path>
-                  <createdTime>Sun Apr 19 2020 08:14:07 GMT+0000 (GMT)</createdTime>
-                  <modifiedTime>Sun Apr 19 2020 08:14:07 GMT+0000 (GMT)</modifiedTime>
+                  <createdTime>Sun Apr 19 2020 10:25:32 GMT+0200 (GMT+02:00)</createdTime>
+                  <modifiedTime>Sun Apr 19 2020 10:25:32 GMT+0200 (GMT+02:00)</modifiedTime>
                </File>
           </React>
      </Frontend>
@@ -55,34 +67,44 @@
           <File>
              <name>CompileLinuxKernel.md</name>
              <path>./src/blogs/LinuxKernel/CompileLinuxKernel.md</path>
-             <createdTime>Thu Apr 16 2020 18:57:03 GMT+0000 (GMT)</createdTime>
-             <modifiedTime>Thu Apr 16 2020 18:57:03 GMT+0000 (GMT)</modifiedTime>
+             <createdTime>Wed Apr 08 2020 19:05:27 GMT+0200 (GMT+02:00)</createdTime>
+             <modifiedTime>Wed Apr 08 2020 19:05:27 GMT+0200 (GMT+02:00)</modifiedTime>
           </File>
      </LinuxKernel>
+     <MachineLearning>
+          <CV>
+          </CV>
+          <NLP>
+          </NLP>
+     </MachineLearning>
      <ORM>
           <Hibernate>
                <File>
                   <name>Multithreading Session Factory.md</name>
                   <path>./src/blogs/ORM/Hibernate/Multithreading Session Factory.md</path>
-                  <createdTime>Thu Apr 16 2020 19:15:22 GMT+0000 (GMT)</createdTime>
-                  <modifiedTime>Thu Apr 16 2020 19:15:22 GMT+0000 (GMT)</modifiedTime>
+                  <createdTime>Sun Apr 19 2020 08:16:19 GMT+0200 (GMT+02:00)</createdTime>
+                  <modifiedTime>Sun Apr 19 2020 08:16:19 GMT+0200 (GMT+02:00)</modifiedTime>
                </File>
           </Hibernate>
      </ORM>
      <ProgrammingLanguages>
+          <Java>
+          </Java>
           <Javascript>
                <File>
                   <name>Event Loop Insiders.md</name>
                   <path>./src/blogs/ProgrammingLanguages/Javascript/Event Loop Insiders.md</path>
-                  <createdTime>Sun Apr 19 2020 06:14:55 GMT+0000 (GMT)</createdTime>
-                  <modifiedTime>Sun Apr 19 2020 06:14:55 GMT+0000 (GMT)</modifiedTime>
+                  <createdTime>Sun Apr 19 2020 08:16:19 GMT+0200 (GMT+02:00)</createdTime>
+                  <modifiedTime>Sun Apr 19 2020 08:16:19 GMT+0200 (GMT+02:00)</modifiedTime>
                </File>
                <File>
                   <name>PWA In Practice.md</name>
                   <path>./src/blogs/ProgrammingLanguages/Javascript/PWA In Practice.md</path>
-                  <createdTime>Thu Apr 16 2020 18:57:03 GMT+0000 (GMT)</createdTime>
-                  <modifiedTime>Thu Apr 16 2020 18:57:03 GMT+0000 (GMT)</modifiedTime>
+                  <createdTime>Fri Apr 10 2020 18:35:57 GMT+0200 (GMT+02:00)</createdTime>
+                  <modifiedTime>Fri Apr 10 2020 18:35:57 GMT+0200 (GMT+02:00)</modifiedTime>
                </File>
           </Javascript>
+          <Python>
+          </Python>
      </ProgrammingLanguages>
 </blogs>
