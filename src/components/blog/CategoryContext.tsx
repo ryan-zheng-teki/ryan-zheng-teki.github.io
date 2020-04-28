@@ -1,21 +1,22 @@
-import { WorkNode } from './types';
 import React, { useState } from 'react';
 
 export type CategoryProviderState = {
-    currentCategory: WorkNode,
-    setCurrentCategory: React.Dispatch<any>,
-}
+  currentCategory: String | undefined,
+  setCurrentCategory: React.Dispatch<unknown>,
+};
 
-export const CurrentCategoryContext = React.createContext<CategoryProviderState | undefined>(undefined);
+
+export const CurrentCategoryContext 
+= React.createContext<CategoryProviderState | undefined>(undefined);
 
 function CurrentCategoryProvider({ children }: { children: React.ReactNode }) {
-    const [currentCategory, setCurrentCategory] = useState(undefined);
+  const [currentCategory, setCurrentCategory] = useState(undefined);
 
-    return (
-        <CurrentCategoryContext.Provider value={{currentCategory, setCurrentCategory}}>
-            {children}
-        </CurrentCategoryContext.Provider>
-    )
+  return (
+    <CurrentCategoryContext.Provider value={{ currentCategory, setCurrentCategory }}>
+      {children}
+    </CurrentCategoryContext.Provider>
+  );
 }
 
 

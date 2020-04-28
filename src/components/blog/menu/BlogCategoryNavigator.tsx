@@ -1,27 +1,41 @@
 import React from 'react';
-import { WorkNode } from '../types';
+import gql from 'graphql-tag';
+import { useQuery } from '@apollo/react-hooks';
+import * as GetCategoriesTypes from 'Generated/GetCategories';
 import { BlogMenuItem } from './BlogMenuItem';
-import * as BlogCategoryService from '../BlogCategoryService';
 
-export class BlogCategoryNavigator extends React.Component<{},{}> {
-    constructor(props: any) {
-        super(props);
-    }
 
-    createRootMenus() {
-        let rootCategory = BlogCategoryService.loadBlogCategories();
-        let rootWorkNode = BlogCategoryService.buildBlogCategoryMenu(rootCategory);
-
-        let menuItems;
-        if(rootWorkNode.workNodeChildren != undefined) {
-            menuItems = rootWorkNode.workNodeChildren.map((childNode: WorkNode) => {
-                return <BlogMenuItem workNode={childNode} />;
-            })
+const GET_CATEGORIES = gql`
+    query GetCategories  {
+        categories{
+            name
+            subCategories {
+                name
+            } 
         }
-        return <ul className='blog__navigator'>{ menuItems}</ul>
-    }
-
-    render() {
-        return this.createRootMenus();
-    }   
 }
+`;
+
+export const  BlogCategoryNavigator:React.FC<{}> = () => {
+  const {
+    data,
+    loading,
+    error
+  } = useQuery<GetCategoriesTypes.GetCategories>(GET_CATEGORIES);
+
+  
+  if(loading) return <p>loading</p>;
+  if(error) return <p>error</p>;
+  if(!data) return <p>Not Found</p>;
+
+  return (
+    <div className="blog__navigator">
+      {
+        data.categories && 
+        data.categories.map((category) => {
+          return <BlogMenuItem key={category.name} category={category} />; 
+        })
+      }
+    </div>
+  );
+};

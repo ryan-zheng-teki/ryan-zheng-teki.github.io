@@ -4,20 +4,21 @@
         "sourceMap": true,
         "noImplicitAny": true,
         "module": "esnext",
+        "moduleResolution": "node",
         "jsx": "react",
         "lib": ["es2017", "dom", "esnext"],
         "target": "es6",
-        "moduleResolution": "node",
         "esModuleInterop": true,
+        "baseUrl": ".",
+        "paths": {
+            "AppComponents": ["./src/components"],
+            "Assets": ["./src/assets"],
+            "Generated/*":  ["./src/__generated/*"]
+        },
     },
     "include": [
-        "src"
+        "src/**/*"                
     ],
-    "baseUrl": ".",
-    "paths": {
-        "AppComponents/*": "src/components/*",
-        "AppConfig/*": "src/config/*",
-        "Assets/*": "src/assets/*",
-    },
+    
     "exclude": ["node_modules", "dist"] // *** The files to not type check,why since src is specified***
 }

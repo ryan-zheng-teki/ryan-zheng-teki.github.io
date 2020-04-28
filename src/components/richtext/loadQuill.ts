@@ -1,18 +1,18 @@
-const loadQuill = (callback) => {
-    const existingScript = document.getElementById('quillEditor');
+const loadQuill = (callback: any) => {
+  const existingScript = document.getElementById('quillEditor');
   
-    if (!existingScript) {
-      const script = document.createElement('script');
-      script.src = 'https://cdn.quilljs.com/1.3.6/quill.js';
-      script.id = 'quillEditor';
-      document.body.appendChild(script);
+  if (!existingScript) {
+    const script = document.createElement('script');
+    script.src = 'https://cdn.quilljs.com/1.3.6/quill.js';
+    script.id = 'quillEditor';
+    document.body.appendChild(script);
   
-      script.onload = () => {
-        if (callback) callback();
-      };
-    }
+    script.onload = () => {
+      if (callback) callback();
+    };
+  }
   
-    if (existingScript && callback) callback();
-  };
+  if (existingScript && callback) callback();
+};
 
-  export default loadQuill;
+export default loadQuill;

@@ -4,19 +4,15 @@
     padding-right: 20px;
 
     ul li {
-        ul {
-            display: none;
-            padding-left: 10px;
-        }
+        display: none;
+    }
+
+    ul:hover li {
+        display: block;
+        padding-left: 10px;
         padding-top: 8px;
         padding-bottom: 8px;
     }
 
-    ul li:hover ul {
-        display: block;
-    }
 
-    > ul {
-        padding-left: 10px;
-    }
 }
