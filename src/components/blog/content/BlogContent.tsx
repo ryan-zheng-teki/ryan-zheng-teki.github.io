@@ -1,5 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
+import { Query, QueryResult } from 'react-apollo';
+
 import * as GetBlogsForCategory from 'Generated/GetBlogsForCategory';
 import gql from 'graphql-tag';
 import { CurrentCategoryContext } from '../CategoryContext';
@@ -18,20 +20,39 @@ const GET_BLOGS_FOR_CATEGORY = gql`
   }
 `;
 
+const GET_LATEST_BLOGS = gql`
+  query GetLatestBlogs($latest: Int!){
+    latestBlogs(latest: $latest) {
+      summary
+      content
+      title
+    }
+  }
+`;
+
 export const BlogContent:React.SFC= () => {
-  const {
-    data,
-    loading,
-    error
-  } = useQuery<GetBlogsForCategory.GetBlogsForCategory, GetBlogsForCategory.GetBlogsForCategoryVariables>(GET_BLOGS_FOR_CATEGORY);
+
   return (
     <CurrentCategoryContext.Consumer>
       {
           ({ currentCategory }) => {
-            if(currentCategory === null) {
-              return <p>Loading</p>;
-            }
-            return <p>Keep loading</p>;
+            if(currentCategory === null) {// show the latest blogs. if there are no latest blogs, then show the author is very lazy.
+              return (
+                <Query query={GET_LATEST_BLOGS}>
+                  {
+                  ({ loading, error, data }: QueryResult<GetBlogsForCategory.GetBlogsForCategory>) => {
+                    if(loading) return <p>loading</p>;
+                    if(error) return <p>error</p>;
+                    if(!data) return <p>Not Found</p>;
+                    
+                    return (
+                      data && d
+                    );
+                  }
+                }
+                </Query>);
+            } 
+            return <p>Keep loading</p>;     
           }
         }
     </CurrentCategoryContext.Consumer>

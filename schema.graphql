@@ -38,7 +38,7 @@
             "description": "",
             "args": [
               {
-                "name": "number",
+                "name": "latest",
                 "description": "",
                 "type": {
                   "kind": "NON_NULL",
