@@ -15,24 +15,11 @@
   },
   "rules": {
     "object-curly-spacing": ["warn", "always"],
-    "no-unused-vars": [
-      "warn",
-      {
-        "vars": "all",
-        "args": "none"
-      }
-    ],
-    "@typescript-eslint/no-unused-vars": [
-      "warn",
-      {
-        "vars": "all",
-        "args": "none"
-      }
-    ],
+    "@typescript-eslint/no-unused-vars": "off",
     "max-len": [
       "warn",
       {
-        "code": 130,
+        "code": 120,
         "ignoreStrings": true,
         "ignoreTemplateLiterals": true,
         "ignoreComments": true
@@ -57,6 +44,7 @@
         ]
       }
     ],
+    "no-unused-vars": "off",
     "@typescript-eslint/camelcase": "off",
     "react/jsx-props-no-spreading": "off",
     "import/prefer-default-export": "off",
@@ -68,6 +56,8 @@
     "react/destructuring-assignment": "off",
     "react/no-unused-state": "off",
     "jsx-a11y/control-has-associated-label": "off",
-    "react/button-has-type": "off"
+    "react/button-has-type": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "jsx-a11y/click-events-have-key-events": "off"
   }
 }

@@ -3,6 +3,7 @@ import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
 import * as GetCategoriesTypes from 'Generated/GetCategories';
 import { BlogMenuItem } from './BlogMenuItem';
+import { CurrentCategoryContext } from '../CategoryContext';
 
 
 const GET_CATEGORIES = gql`
@@ -28,13 +29,14 @@ export const  BlogCategoryNavigator:React.FC<{}> = () => {
   if(error) return <p>error</p>;
   if(!data) return <p>Not Found</p>;
 
+
   return (
     <div className="blog__navigator">
       {
-        data.categories && 
-        data.categories.map((category) => {
-          return <BlogMenuItem key={category.name} category={category} />; 
-        })
+                data.categories && 
+                data.categories.map((category) => {
+                  return <BlogMenuItem key={category.name} category={category} />; 
+                })
       }
     </div>
   );

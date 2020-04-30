@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 
 export type CategoryProviderState = {
-  currentCategory: String | undefined,
+  currentCategory: string | undefined,
   setCurrentCategory: React.Dispatch<unknown>,
 };
 
 
-export const CurrentCategoryContext 
-= React.createContext<CategoryProviderState | undefined>(undefined);
+export const CurrentCategoryContext = React.createContext<CategoryProviderState>(undefined);
 
 function CurrentCategoryProvider({ children }: { children: React.ReactNode }) {
   const [currentCategory, setCurrentCategory] = useState(undefined);
@@ -18,9 +17,6 @@ function CurrentCategoryProvider({ children }: { children: React.ReactNode }) {
     </CurrentCategoryContext.Provider>
   );
 }
-
-
-
 
 
 export default CurrentCategoryProvider;

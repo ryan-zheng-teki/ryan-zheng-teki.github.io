@@ -1,6 +1,6 @@
 module.exports = {
     client: {
-      service: "tech-blog",
+      name: "tech-blog",
       url: "http://localhost:8080/graphql"
     },
 };
