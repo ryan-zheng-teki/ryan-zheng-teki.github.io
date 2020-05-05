@@ -1,8 +1,22 @@
+/* eslint-disable react/jsx-no-undef */
 import React from 'react';
-import { QueryResult, Query } from 'react-apollo';
+import { QueryResult } from '@apollo/react-common';
+import { Query, QueryComponentOptions } from '@apollo/react-components';
 import { FetchPolicy, ApolloQueryResult, ErrorPolicy } from 'apollo-client';
 import { DocumentNode } from 'graphql';
 import { RequireAtLeastOne } from './tsUtils';
+import Error from '../components/error';
+import Loader from '../components/loader';
+
+
+function maybe<T>(exp: () => T, d?: T) {
+  try {
+    const result = exp();
+    return result === undefined ? d : result;
+  } catch {
+    return d;
+  }
+}
 
 interface LoadMore<TData, TVariables> {
   loadMore: (
@@ -14,7 +28,7 @@ interface LoadMore<TData, TVariables> {
 interface TypedQueryInnerProps<TData, TVariables> {
   children: (
     result: QueryResult<TData, TVariables> & LoadMore<TData, TVariables>
-  ) => React.ReactNode;
+  ) => React.ReactElement
   displayError?: boolean;
   displayLoader?: boolean;
   fetchPolicy?: FetchPolicy;
@@ -42,8 +56,10 @@ export function TypedQuery<TData, TVariables>(query: DocumentNode) {
       skip,
       variables,
       onCompleted,
-    } = props as TypedQueryInnerProps<TData, TVariables>;
-    
+    } = props as JSX.LibraryManagedAttributes<
+    QueryComponentOptions<TData, TVariables>,
+    TypedQueryInnerProps<TData, TVariables>
+    >;
     return (
       <Query
         query={query}
@@ -84,8 +100,9 @@ export function TypedQuery<TData, TVariables>(query: DocumentNode) {
           if (displayLoader && loading && !hasData) {
             return <Loader full={loaderFull} />;
           }
-  
+        
           if (hasData || (renderOnError && error) || alwaysRender) {
+            // I think the children here might be refering to different things.(why)
             return children({ ...queryData, loadMore });
           }
   

@@ -2,6 +2,7 @@ import React from 'react';
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
 import * as GetCategoriesTypes from 'Generated/GetCategories';
+import { TypedQuery } from 'src/core/queries';
 import { BlogMenuItem } from './BlogMenuItem';
 import { CurrentCategoryContext } from '../CategoryContext';
 
