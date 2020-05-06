@@ -33,7 +33,7 @@
   "scripts": {
     "test": "jest",
     "preinstall": "npx npm-force-resolutions",
-    "build": "webpack --config webpack.config.js",
+    "build": "webpack --config webpack.config.js --mode production",
     "start": "cross-env NODE_ENV=develop webpack-dev-server --open --mode development",
     "predeploy": "npm run build",
     "genxml": "folder-to-xml ./src/blogs ./src/config/blog-categories.xml",

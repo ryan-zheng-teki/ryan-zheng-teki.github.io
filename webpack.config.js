@@ -11,11 +11,12 @@ const distDir = path.join(__dirname, "./dist");
 module.exports = (env, argv) => {
   const devMode = argv.mode !== "production";
 
+  console.log(devMode?"In dev": "In production");
   const paths = { sourceDir, distDir };
 
   const base = baseConfig(paths);
   const dev =  merge(base, devConfig(paths));
   const prod = merge(base, prodConfig(paths));
-  
+
   return devMode ? dev : prod;
 };
