@@ -16,6 +16,6 @@ module.exports = (env, argv) => {
   const base = baseConfig(paths);
   const dev =  merge(base, devConfig(paths));
   const prod = merge(base, prodConfig(paths));
-
+  
   return devMode ? dev : prod;
 };
