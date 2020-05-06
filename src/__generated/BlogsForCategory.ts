@@ -9,6 +9,7 @@
 
 export interface BlogsForCategory_blogsForCategory {
   __typename: "BlogItem";
+  id: string;
   content: string;
 }
 

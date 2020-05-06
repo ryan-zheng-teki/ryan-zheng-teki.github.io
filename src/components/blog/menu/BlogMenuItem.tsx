@@ -1,10 +1,10 @@
 import React from 'react';
-import * as   GetCategoriesTypes from 'Generated/GetCategories';
+import { BlogList_categories as BlogCategory } from 'Generated/BlogList';
 import { render } from 'react-dom';
-import { CurrentCategoryContext } from '../CategoryContext';
+import { CurrentCategoryContext } from '../context/CategoryContext';
 
 export interface BlogMenuProps {
-  category: GetCategoriesTypes.GetCategories_categories,
+  category: BlogCategory,
 }
 
 
@@ -22,9 +22,6 @@ export class BlogMenuItem extends React.Component<BlogMenuProps, { active: boole
       return { active: !prevState.active };
     });
   }
-
-
-  
 
   render() {
     const { category } = this.props;

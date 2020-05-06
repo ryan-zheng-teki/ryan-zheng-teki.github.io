@@ -1,9 +1,29 @@
 import * as React from 'react';
+import {
+  BlogCategoryNavigator,
+  BlogContent,
+  BlogDateSelector,
+  CurrentCategoryProvider,
+} from 'AppComponents';
+import { HomePageQuery } from './queries';
 
-export function HomePage() {
+export const HomePage: React.FC = ()=>{
   return (
-    <>
-      <p>Still considering what to show here</p>
-    </>
+    <HomePageQuery>
+      {
+        ({ data }) => {
+          return (
+            <div className="page__blog">
+              <CurrentCategoryProvider>
+                <BlogCategoryNavigator categories={data.categories} />
+                <BlogContent pagedBlogs={data.blogs} />
+              </CurrentCategoryProvider>
+              <BlogDateSelector />
+            </div>
+          );
+        } 
+    }
+    </HomePageQuery>
+
   );
-}
+};

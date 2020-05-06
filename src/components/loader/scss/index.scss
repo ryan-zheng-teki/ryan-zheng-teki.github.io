@@ -1,5 +1,3 @@
-@import "../../../globalStyles/scss/variables.scss";
-
 @keyframes firstItem {
   0% {
     left: 0;
@@ -74,7 +72,7 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  padding: $spacer 0;
+  padding: 1rem 0;
 
   &__items {
     position: relative;
@@ -83,7 +81,7 @@
     margin: 0 auto;
 
     span {
-      background-color: $blue;
+      background-color: blue;
       width: 1rem;
       height: 1rem;
       border-radius: 1rem;

@@ -6,7 +6,7 @@ import { HttpLink } from 'apollo-link-http';
 import { ApolloClient } from 'apollo-client';
 import { ApolloProvider } from '@apollo/react-hooks';
 import { Header, Footer, QuillEditor } from './components';
-import { Blogs, AboutMe } from './pages';
+import { HomePage, AboutMe } from './pages';
 
 
 const cache = new InMemoryCache();
@@ -30,7 +30,7 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/">
-            <Blogs />
+            <HomePage />
           </Route>
           <Route path="/about">
             <AboutMe />

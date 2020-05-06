@@ -40,7 +40,7 @@
     "genxml": "folder-to-xml ./src/blogs ./src/config/blog-categories.xml",
     "deploy": "gh-pages -d dist",
     "schemadownload": "npx apollo schema:download --endpoint=http://localhost:8080/graphql schema.graphql",
-    "codegen": "apollo client:codegen  --includes=./src/**/*.tsx --target=typescript  --outputFlat src/__generated --tagName=gql",
+    "codegen": "apollo client:codegen  --includes=./src/**/*.tsx,./src/**/*.ts --target=typescript  --outputFlat src/__generated --tagName=gql",
     "updateRemote": "npx apollo service:push --graph=tech-blog --endpoint=http://localhost:8080/graphql",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
     "format": "prettier --write src/**/*.{ts,tsx}"

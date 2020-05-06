@@ -1,41 +1,18 @@
 import React from 'react';
 import gql from 'graphql-tag';
-import { useQuery } from '@apollo/react-hooks';
-import * as GetCategoriesTypes from 'Generated/GetCategories';
-import { TypedQuery } from 'src/core/queries';
+import {BlogList_categories as BlogCategory} from 'Generated/BlogList'
 import { BlogMenuItem } from './BlogMenuItem';
-import { CurrentCategoryContext } from '../CategoryContext';
 
 
-const GET_CATEGORIES = gql`
-    query GetCategories  {
-        categories{
-            name
-            subCategories {
-                name
-            } 
-        }
+interface BlogCategoryNavigatorProps {
+  categories: BlogCategory[]
 }
-`;
 
-export const  BlogCategoryNavigator:React.FC<{}> = () => {
-  const {
-    data,
-    loading,
-    error
-  } = useQuery<GetCategoriesTypes.GetCategories>(GET_CATEGORIES);
-
-  
-  if(loading) return <p>loading</p>;
-  if(error) return <p>error</p>;
-  if(!data) return <p>Not Found</p>;
-
-
+export const  BlogCategoryNavigator:React.FC<BlogCategoryNavigatorProps> = ({categories}) => {
   return (
     <div className="blog__navigator">
       {
-                data.categories && 
-                data.categories.map((category) => {
+        categories.map((category) => {
                   return <BlogMenuItem key={category.name} category={category} />; 
                 })
       }
