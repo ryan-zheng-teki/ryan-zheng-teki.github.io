@@ -8,7 +8,6 @@ const prodConfig = require("./config/webpack/config.prod");
 const sourceDir = path.join(__dirname, "./src");
 const distDir = path.join(__dirname, "./dist");
 
-
 module.exports = (env, argv) => {
   const devMode = argv.mode !== "production";
 

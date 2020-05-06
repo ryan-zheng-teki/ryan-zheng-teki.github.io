@@ -5,7 +5,7 @@ import logo from 'Assets/logo.svg';
 export function Header() {
   return (
     <div className="header">
-      <img className="logo" src={logo} alt="logo" />
+      <a href="/"><img className="logo" src={logo} alt="logo" /></a>
       <ul className="header__right">
         <li>
           <Link to="/create" className="header__right__newblog">

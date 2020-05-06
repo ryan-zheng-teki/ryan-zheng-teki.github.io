@@ -13,7 +13,7 @@ import { HomePage, AboutMe } from './pages';
 const cache = new InMemoryCache();
 const client = new ApolloClient({
   link: new HttpLink({
-    uri: `${apiUrl  }/graphql`
+    uri: `${apiUrl}/graphql`
   }),
   cache,
 });
