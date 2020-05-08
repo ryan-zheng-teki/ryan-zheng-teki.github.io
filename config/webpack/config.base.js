@@ -1,8 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const {CleanWebpackPlugin} = require("clean-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
-  
+
 module.exports = ({ sourceDir, distDir }) => ({
     entry: `${sourceDir}/index`,
     devtool: 'inline-source-map',
@@ -12,7 +12,7 @@ module.exports = ({ sourceDir, distDir }) => ({
     },
     resolve: {
         modules: ['node_modules', 'src'],
-        extensions: ['.js', '.jsx','.ts','.tsx'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
         alias: {
             AppComponents: `${sourceDir}/components/`,
             AppConfig: `${sourceDir}/config/`,
@@ -21,33 +21,33 @@ module.exports = ({ sourceDir, distDir }) => ({
     },
     module: {
         rules: [
-        {
-            test: /\.(js|jsx|ts|tsx)$/,
-            loader: 'babel-loader',
-            exclude: [
-                '/node_modules/',
-            ],
-        },
-        {
-            test: /\.scss$/,
-            use: ['style-loader', 'css-loader', 'sass-loader'],
-        },
-        {
-            test: /\.(xml|md)$/i,
-            use: 'raw-loader',
-        },
-        {
-            test: /\.(png|jpeg|svg|gif)$/,
-            loader: 'file-loader',
-            options: {
-                outputPath: 'assets',
+            {
+                test: /\.(js|jsx|ts|tsx)$/,
+                loader: 'babel-loader',
+                exclude: [
+                    '/node_modules/',
+                ],
             },
-        },
-        {
-            enforce: "pre",
-            test: /\.js$/,
-            loader: "source-map-loader"
-        }
+            {
+                test: /\.scss$/,
+                use: ['style-loader', 'css-loader', 'sass-loader'],
+            },
+            {
+                test: /\.(xml|md)$/i,
+                use: 'raw-loader',
+            },
+            {
+                test: /\.(png|jpeg|svg|gif)$/,
+                loader: 'file-loader',
+                options: {
+                    outputPath: 'assets',
+                },
+            },
+            {
+                enforce: "pre",
+                test: /\.js$/,
+                loader: "source-map-loader"
+            }
         ]
     },
     devtool: 'inline-source-map',
@@ -57,10 +57,11 @@ module.exports = ({ sourceDir, distDir }) => ({
         hot: true
     },
     plugins: [
-      new CleanWebpackPlugin(),
-      new HtmlWebpackPlugin({
-        template: './src/index.html',
-        filename: './index.html'       })
+        new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            template: './src/index.html',
+            favicon: "./src/favicon.ico"
+        }),
     ],
     node: {
         fs: "empty",
