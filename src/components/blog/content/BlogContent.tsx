@@ -38,7 +38,7 @@ export const BlogContent:React.FC<BlogContentProps> = ({ pagedBlogs }) => {
                               });
                               return <>{blogs}</>;
                             } 
-                            return <p>The author has not created any blogs</p>;
+                            return <p>The author has not created any blogs for {currentCategory}</p>;
                           }
                         }
                 </BlogsForCategoryQuery>
