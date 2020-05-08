@@ -34,7 +34,7 @@ export class BlogMenuItem extends React.Component<BlogMenuProps, { active: boole
                   {
                       category.subCategories.map((subCategory) => { 
                         return (
-                          <li key={subCategory.name} className="blog__category__item" onClick={() => setCurrentCategory(category.name)}>
+                          <li key={subCategory.name} className="blog__category__item" onClick={() => setCurrentCategory(subCategory.name)}>
                             {subCategory.name}
                           </li>
                         );
