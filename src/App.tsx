@@ -30,8 +30,8 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          <Route path="/">
-            <HomePage />
+          <Route exact path="/">
+            <HomePage/>
           </Route>
           <Route path="/about">
             <AboutMe />
