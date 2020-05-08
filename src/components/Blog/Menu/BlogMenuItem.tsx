@@ -2,6 +2,7 @@ import React from 'react';
 import { BlogList_categories as BlogCategory } from 'Generated/BlogList';
 import { render } from 'react-dom';
 import { CurrentCategoryContext } from '../context/CategoryContext';
+import { any } from 'prop-types';
 
 export interface BlogMenuProps {
   category: BlogCategory,
@@ -17,10 +18,11 @@ export class BlogMenuItem extends React.Component<BlogMenuProps, { active: boole
     this.openTopCategory = this.openTopCategory.bind(this);
   }
   
-  openTopCategory() {
+  openTopCategory(event: any) {
     this.setState((prevState) => {
       return { active: !prevState.active };
     });
+    event.stopPropagation();
   }
 
   render() {
@@ -30,11 +32,14 @@ export class BlogMenuItem extends React.Component<BlogMenuProps, { active: boole
         {
             ({ setCurrentCategory }) => {
               return (
-                <ul className={`blog__category ${this.state.active ? 'active' : ''}`} onClick={() => this.openTopCategory()}>{category.name} &#9660;
+                <ul className={`blog__category ${this.state.active ? 'active' : 'inactive'}`} onClick={(event) => this.openTopCategory(event)}>{category.name} &#9660;
                   {
                       category.subCategories.map((subCategory) => { 
-                        return (
-                          <li key={subCategory.name} className="blog__category__item" onClick={() => setCurrentCategory(subCategory.name)}>
+                        return ( 
+                          <li key={subCategory.name} className="blog__category__item" onClick={(event) => {
+                            event.stopPropagation();
+                            setCurrentCategory(subCategory.name);
+                          }}>
                             {subCategory.name}
                           </li>
                         );

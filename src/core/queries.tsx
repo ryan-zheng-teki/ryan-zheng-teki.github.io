@@ -105,7 +105,7 @@ export function TypedQuery<TData, TVariables>(query: DocumentNode) {
             // I think the children here might be refering to different things.(why)
             return children({ ...queryData, loadMore });
           }
-  
+          
           return null;
         }}
       </Query>
