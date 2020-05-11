@@ -39,6 +39,9 @@ function App() {
           <Route path="/create">
             <QuillEditor />
           </Route>
+          <Route path="/callback">
+            <p>Github Called Back</p>
+          </Route>
         </Switch>
         <Footer />
       </Router>

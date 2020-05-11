@@ -1,15 +1,15 @@
-import React from 'react';
 import { BlogList_categories as BlogCategory } from 'Generated/BlogList';
-import { render } from 'react-dom';
-import { CurrentCategoryContext } from '../context/CategoryContext';
-import { any } from 'prop-types';
+import React from 'react';
+import { CurrentCategoryContext } from '../Context/CategoryContext';
 
 export interface BlogMenuProps {
-  category: BlogCategory,
+  category: BlogCategory;
 }
 
-
-export class BlogMenuItem extends React.Component<BlogMenuProps, { active: boolean}>  {
+export class BlogMenuItem extends React.Component<
+  BlogMenuProps,
+  { active: boolean }
+> {
   constructor(props: BlogMenuProps) {
     super(props);
     this.state = {
@@ -17,7 +17,7 @@ export class BlogMenuItem extends React.Component<BlogMenuProps, { active: boole
     };
     this.openTopCategory = this.openTopCategory.bind(this);
   }
-  
+
   openTopCategory(event: any) {
     this.setState((prevState) => {
       return { active: !prevState.active };
@@ -29,26 +29,32 @@ export class BlogMenuItem extends React.Component<BlogMenuProps, { active: boole
     const { category } = this.props;
     return (
       <CurrentCategoryContext.Consumer>
-        {
-            ({ setCurrentCategory }) => {
-              return (
-                <ul className={`blog__category ${this.state.active ? 'active' : 'inactive'}`} onClick={(event) => this.openTopCategory(event)}>{category.name} &#9660;
-                  {
-                      category.subCategories.map((subCategory) => { 
-                        return ( 
-                          <li key={subCategory.name} className="blog__category__item" onClick={(event) => {
-                            event.stopPropagation();
-                            setCurrentCategory(subCategory.name);
-                          }}>
-                            {subCategory.name}
-                          </li>
-                        );
-                      })
-                  }
-                </ul>
-              );
-            }
-          }
+        {({ setCurrentCategory }) => {
+          return (
+            <ul
+              className={`blog__category ${
+                this.state.active ? 'active' : 'inactive'
+              }`}
+              onClick={(event) => this.openTopCategory(event)}
+            >
+              {category.name} &#9660;
+              {category.subCategories.map((subCategory) => {
+                return (
+                  <li
+                    key={subCategory.name}
+                    className="blog__category__item"
+                    onClick={(event) => {
+                      event.stopPropagation();
+                      setCurrentCategory(subCategory.name);
+                    }}
+                  >
+                    {subCategory.name}
+                  </li>
+                );
+              })}
+            </ul>
+          );
+        }}
       </CurrentCategoryContext.Consumer>
     );
   }

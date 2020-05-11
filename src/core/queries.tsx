@@ -5,8 +5,8 @@ import { Query, QueryComponentOptions } from '@apollo/react-components';
 import { FetchPolicy, ApolloQueryResult, ErrorPolicy } from 'apollo-client';
 import { DocumentNode } from 'graphql';
 import { RequireAtLeastOne } from './tsUtils';
-import Error from '../components/error';
-import Loader from '../components/loader';
+import Error from '../components/Error';
+import Loader from '../components/Loader';
 
 
 function maybe<T>(exp: () => T, d?: T) {

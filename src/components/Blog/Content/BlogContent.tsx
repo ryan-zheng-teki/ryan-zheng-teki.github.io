@@ -3,7 +3,7 @@ import gql from 'graphql-tag';
 import { BlogList_blogs as Blogs } from 'Generated/BlogList';
 import * as Globals from '../../../constants';
 
-import { CurrentCategoryContext } from '../context/CategoryContext';
+import { CurrentCategoryContext } from '../Context/CategoryContext';
 import { BlogsForCategoryQuery } from '../queries';
 
 

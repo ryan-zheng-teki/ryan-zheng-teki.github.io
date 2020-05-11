@@ -1,9 +1,16 @@
-const webpack = require("webpack");
+const webpack = require('webpack');
+const dotenv = require('dotenv');
+const path = require('path');
+module.exports = ({ sourceDir, distDir }) => {
+  const envFile = path.join(__dirname) + '/.env.dev';
 
-module.exports = ({ sourceDir, distDir }) => ({
-    plugins: [
-        new webpack.EnvironmentPlugin({
-            API_URI: "https://localhost:8080",
-            })
-    ]
-});
+  const fileEnv = dotenv.config({ path: envFile }).parsed;
+  const envKeys = Object.keys(fileEnv).reduce((prev, next) => {
+    prev[`process.env.${next}`] = JSON.stringify(fileEnv[next]);
+    return prev;
+  }, {});
+
+  return {
+    plugins: [new webpack.DefinePlugin(envKeys)],
+  };
+};
