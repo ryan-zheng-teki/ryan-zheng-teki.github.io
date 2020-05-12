@@ -1,26 +1,22 @@
 {
-    "liveServer.settings.port": 5501,
-    "eslint.alwaysShowStatus": true,
-    "eslint.format.enable": true,
+  "liveServer.settings.port": 5501,
+  "eslint.alwaysShowStatus": true,
+  "eslint.format.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.lintTask.options": "",
+  "eslint.run": "onSave",
+  "[typescript]": {
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
-    },
-    "eslint.options": {
-        "configFile": "/Users/ryan.zheng/Learning/techblogs/tech-blogs/.eslintrc.json"
-    },
-    "eslint.lintTask.options": "",
-    "eslint.run": "onSave",
-    "[typescript]": {
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": true
-        }
-    },
-    "[typescriptreact]": {
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": true
-        }
-    },
-    "editor.formatOnSave": true,
-    "editor.tabSize": 2
-    
+      "source.organizeImports": true
+    }
+  },
+  "[typescriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2
 }

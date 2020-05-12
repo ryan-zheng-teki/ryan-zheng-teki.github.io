@@ -1,20 +1,21 @@
 import React from 'react';
-import { makeRandomString, toQuery } from 'src/core/tsUtils';
+import { makeRandomString, toQuery } from '../../../core/tsUtils';
+import GithubIcon from './GitHub-Mark-32px.png';
 
-const GITHUB_API_URL = process.env.GITHUB_API_URL;
+const { GITHUB_API_URL } = process.env;
 const clientId = process.env.CLIENT_ID;
 const clientSecret = process.env.CLIENT_SECRET;
 const redirectUrl = 'localhost:3000/callback';
 
 export const GithubLogin: React.FC = () => {
-  let onClickHandler = () => {
-    let query = toQuery({
+  const onClickHandler = () => {
+    const query = toQuery({
       clientId,
       clientSecret,
       redirectUrl,
       state: makeRandomString(20),
     });
-    window.location.href = GITHUB_API_URL + `${query}`;
+    window.location.href = `${GITHUB_API_URL}${query}`;
   };
 
   return (
@@ -23,7 +24,7 @@ export const GithubLogin: React.FC = () => {
       type="button"
       onClick={() => onClickHandler()}
     >
-      <img src={GithubIcon}> Gith Hub Image</img>
+      <img src={GithubIcon} alt="github icon" />
     </button>
   );
 };

@@ -1,0 +1,19 @@
+html,
+body {
+  height: 100%;
+  box-sizing: border-box;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-size: 18px;
+  line-height: 1.6rem;
+}
+
+ul {
+  list-style-type: none;
+  cursor: pointer;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}

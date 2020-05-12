@@ -1,7 +1,7 @@
 import {
+  BlogArchive,
   BlogCategoryNavigator,
   BlogContent,
-  BlogDateSelector,
   CurrentCategoryContext,
   CurrentCategoryProvider,
 } from './Blog';
@@ -17,7 +17,7 @@ export {
   MarkdownDisplayer,
   Footer,
   BlogContent,
-  BlogDateSelector,
+  BlogArchive,
   CurrentCategoryProvider,
   CurrentCategoryContext,
 };

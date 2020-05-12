@@ -1,13 +1,12 @@
 /* eslint-disable react/jsx-no-undef */
-import React from 'react';
 import { QueryResult } from '@apollo/react-common';
 import { Query, QueryComponentOptions } from '@apollo/react-components';
-import { FetchPolicy, ApolloQueryResult, ErrorPolicy } from 'apollo-client';
+import { ApolloQueryResult, ErrorPolicy, FetchPolicy } from 'apollo-client';
 import { DocumentNode } from 'graphql';
-import { RequireAtLeastOne } from './tsUtils';
+import React from 'react';
 import Error from '../components/Error';
 import Loader from '../components/Loader';
-
+import { RequireAtLeastOne } from './tsUtils';
 
 function maybe<T>(exp: () => T, d?: T) {
   try {
@@ -24,11 +23,11 @@ interface LoadMore<TData, TVariables> {
     extraVariables: RequireAtLeastOne<TVariables>
   ) => Promise<ApolloQueryResult<TData>>;
 }
-  
+
 interface TypedQueryInnerProps<TData, TVariables> {
   children: (
     result: QueryResult<TData, TVariables> & LoadMore<TData, TVariables>
-  ) => React.ReactElement
+  ) => React.ReactElement;
   displayError?: boolean;
   displayLoader?: boolean;
   fetchPolicy?: FetchPolicy;
@@ -40,7 +39,6 @@ interface TypedQueryInnerProps<TData, TVariables> {
   alwaysRender?: boolean;
   onCompleted?: (data: TData) => void;
 }
-
 
 export function TypedQuery<TData, TVariables>(query: DocumentNode) {
   return (props: TypedQueryInnerProps<TData, TVariables>) => {
@@ -92,20 +90,20 @@ export function TypedQuery<TData, TVariables>(query: DocumentNode) {
               },
               variables: { ...variables, ...extraVariables },
             });
-  
+
           if (displayError && error && !hasData) {
             return <Error error={error.message} />;
           }
-  
+
           if (displayLoader && loading && !hasData) {
             return <Loader full={loaderFull} />;
           }
-        
+
           if (hasData || (renderOnError && error) || alwaysRender) {
             // I think the children here might be refering to different things.(why)
             return children({ ...queryData, loadMore });
           }
-          
+
           return null;
         }}
       </Query>

@@ -1,5 +1,5 @@
-import React from 'react';
 import Tux from 'Assets/tux.svg';
+import React from 'react';
 
 export function Footer() {
   return (

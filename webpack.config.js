@@ -12,8 +12,14 @@ const distDir = path.join(__dirname, './dist');
 module.exports = (env, argv) => {
   const devMode = argv.mode !== 'production';
 
-  console.log(devMode ? 'In dev' : 'In production');
-  const paths = { sourceDir, distDir };
+  let envFile = devMode ? '.env.dev' : '.env.prod';
+  envFile = path.join(__dirname) + '/' + envFile;
+  console.log(
+    'current directory is ',
+    path.join(__dirname),
+    devMode ? 'In dev' : 'In production'
+  );
+  const paths = { sourceDir, distDir, envFile };
 
   const base = baseConfig(paths);
   const dev = merge(base, devConfig(paths));
