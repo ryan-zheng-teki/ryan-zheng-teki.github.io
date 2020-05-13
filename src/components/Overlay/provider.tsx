@@ -8,7 +8,7 @@ import {
   OverlayType,
 } from './context';
 
-class Provider extends React.Component<
+export class Provider extends React.Component<
 RouteComponentProps<{}>,
 OverlayContextInterface
 > {

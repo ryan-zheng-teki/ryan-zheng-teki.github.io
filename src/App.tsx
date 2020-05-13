@@ -25,10 +25,10 @@ cache.writeData({
 
 function App() {
   return (
-    <ApolloProvider client={client}>
-      <Router>
-        <Header />
+    <Router>
+      <ApolloProvider client={client}>
         <OverlayProvider>
+          <Header />
           <Switch>
             <Route exact path="/">
               <HomePage />
@@ -44,10 +44,10 @@ function App() {
             </Route>
           </Switch>
           <OverlayManager />
+          <Footer />>
         </OverlayProvider>
-      </Router>
-      <Footer />
-    </ApolloProvider>
+      </ApolloProvider>
+    </Router>
   );
 }
 export default App;
