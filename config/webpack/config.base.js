@@ -59,6 +59,7 @@ module.exports = ({ sourceDir, distDir, envFile }) => {
       ],
     },
     devServer: {
+      historyApiFallback: true,
       contentBase: './build',
       port: 3000,
       hot: true,
