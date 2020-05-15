@@ -14,11 +14,6 @@ module.exports = (env, argv) => {
 
   let envFile = devMode ? '.env.dev' : '.env.prod';
   envFile = path.join(__dirname) + '/' + envFile;
-  console.log(
-    'current directory is ',
-    path.join(__dirname),
-    devMode ? 'In dev' : 'In production'
-  );
   const paths = { sourceDir, distDir, envFile };
 
   const base = baseConfig(paths);

@@ -15,7 +15,7 @@ module.exports = ({ sourceDir, distDir, envFile }) => {
 
   return {
     entry: `${sourceDir}/index`,
-    devtool: 'inline-source-map',
+    devtool: 'eval-source-map',
     output: {
       path: distDir,
       filename: 'app.bundle.js',
@@ -58,7 +58,6 @@ module.exports = ({ sourceDir, distDir, envFile }) => {
         },
       ],
     },
-    devtool: 'inline-source-map',
     devServer: {
       contentBase: './build',
       port: 3000,
@@ -69,7 +68,7 @@ module.exports = ({ sourceDir, distDir, envFile }) => {
       new HtmlWebpackPlugin({
         template: './src/index.html',
       }),
-      new CopyWebpackPlugin([{ from: './src/myfavicon.ico' }]),
+      new CopyWebpackPlugin([{ from: './src/favicon.ico' }]),
       new webpack.DefinePlugin(envKeys),
     ],
     node: {

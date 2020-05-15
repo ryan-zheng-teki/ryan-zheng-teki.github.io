@@ -9,8 +9,8 @@ import {
 } from './context';
 
 export class Provider extends React.Component<
-RouteComponentProps<{}>,
-OverlayContextInterface
+  RouteComponentProps<{}>,
+  OverlayContextInterface
 > {
   notificationCloseDelay = 2500;
 
@@ -24,8 +24,14 @@ OverlayContextInterface
       type: null,
     };
   }
+  componentWillMount() {
+    this.props.history.listen((location, action) => {
+      console.log('on route change ', location);
+    });
+  }
 
   componentDidUpdate(prevProps: RouteComponentProps<{}>) {
+    console.log('current locaiton is', this.props.location.pathname);
     if (
       this.props.location.pathname !== prevProps.location.pathname &&
       this.state.type !== OverlayType.message

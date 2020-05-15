@@ -42,6 +42,9 @@ function App() {
             <Route path="/callback">
               <p>Github Called Back. Is it good to place it here?</p>
             </Route>
+            <Route path="/">
+              <p>Default path</p>
+            </Route>
           </Switch>
           <OverlayManager />
           <Footer />>
