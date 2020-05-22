@@ -1,0 +1,33 @@
+@import '../globals/_variables';
+
+.page-login {
+  border: 1px solid #d2c0c0;
+  margin: auto;
+  width: 410px;
+  margin-top: $baseline * 2;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  text-align: center;
+
+  > h2 {
+    padding-top: $baseline;
+    padding-bottom: $baseline;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    margin-bottom: $baseline * 2;
+    line-height: $baseline * 2;
+  }
+
+  .github__button {
+    background-color: rgba(229, 236, 245, 1);
+    position: relative;
+    width: 90%;
+    height: $baseline * 2;
+    margin-bottom: $baseline * 2;
+    img {
+      left: 0;
+      top: 4px;
+      position: absolute;
+    }
+  }
+}

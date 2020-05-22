@@ -1,23 +1,12 @@
-import {
+export {
   BlogArchive,
   BlogCategoryNavigator,
   BlogContent,
   CurrentCategoryContext,
   CurrentCategoryProvider,
 } from './Blog';
-import { Footer } from './Footer';
-import { Header } from './Header';
-import { MarkdownDisplayer } from './Markdown/MarkdownDisplayer';
-import { QuillEditor } from './RichText';
-
-export {
-  Header,
-  QuillEditor,
-  BlogCategoryNavigator,
-  MarkdownDisplayer,
-  Footer,
-  BlogContent,
-  BlogArchive,
-  CurrentCategoryProvider,
-  CurrentCategoryContext,
-};
+export { Footer } from './Footer';
+export { Header } from './Header';
+export { GithubLogin } from './Login';
+export { MarkdownDisplayer } from './Markdown/MarkdownDisplayer';
+export { QuillEditor } from './RichText';

@@ -1,7 +1,7 @@
 import logo from 'Assets/logo.svg';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { OverlayContext, OverlayTheme, OverlayType } from './Overlay';
+import { OverlayContext } from './Overlay';
 
 export function Header() {
   return (
@@ -13,12 +13,8 @@ export function Header() {
               <img className="logo" src={logo} alt="logo" />
             </a>
             <ul className="header__right">
-              <li
-                onClick={() => {
-                  overlayObject.show(OverlayType.login, OverlayTheme.modal);
-                }}
-              >
-                Sign In
+              <li>
+                <Link to="/login">Sign In</Link>
               </li>
               <li>
                 <Link to="/create" className="header__right__newblog">

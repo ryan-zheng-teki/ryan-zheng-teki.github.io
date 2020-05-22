@@ -10,6 +10,7 @@ import { OverlayProvider } from './components/Overlay';
 import OverlayManager from './components/OverlayManager';
 import { apiUrl } from './constants';
 import { AboutMe, HomePage } from './pages';
+import { LoginPage } from './pages/LoginPage';
 
 const cache = new InMemoryCache();
 const client = new ApolloClient({
@@ -39,15 +40,12 @@ function App() {
             <Route path="/create">
               <QuillEditor />
             </Route>
-            <Route path="/callback">
-              <p>Github Called Back. Is it good to place it here?</p>
-            </Route>
-            <Route path="/">
-              <p>Default path</p>
+            <Route path="/login">
+              <LoginPage />
             </Route>
           </Switch>
           <OverlayManager />
-          <Footer />>
+          <Footer />
         </OverlayProvider>
       </ApolloProvider>
     </Router>
