@@ -7,7 +7,7 @@ import { rslError } from './utils';
  * @see https://developers.google.com/api-client-library/javascript/reference/referencedocs#gapiauth2initparams
  * @see https://developers.google.com/api-client-library/javascript/reference/referencedocs#gapiauth2getauthinstance
  */
-const load = ({ appId, scope }) =>
+const init = ({ appId, scope }: { appId: string; scope: string }) =>
   new Promise((resolve, reject) => {
     const firstJS = document.getElementsByTagName('script')[0];
     const js = document.createElement('script');
@@ -170,7 +170,7 @@ const oldLoad = (appId, cid, fn, err) => {
 export default {
   checkLogin,
   generateUser,
-  load,
+  init,
   login,
   logout,
   oldLoad,

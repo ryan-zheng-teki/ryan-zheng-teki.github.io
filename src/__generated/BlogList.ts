@@ -10,7 +10,7 @@
 export interface BlogList_blogs_edges_node {
   __typename: "BlogItem";
   id: string;
-  summary: string;
+  summary: string | null;
   content: string;
 }
 

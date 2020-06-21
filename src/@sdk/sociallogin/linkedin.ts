@@ -1,6 +1,6 @@
 import Promise from 'bluebird'
 
-import { rslError, timestampFromNow } from '../utils'
+import { rslError, timestampFromNow } from './utils'
 
 /**
  * Loads LinkedIn SDK.

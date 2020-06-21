@@ -1,4 +1,4 @@
-import { GithubLogin } from 'AppComponents';
+import { GithubLogin } from 'AppComponents/Login';
 import React from 'react';
 
 export const LoginPage: React.FC = () => {

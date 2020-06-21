@@ -1,14 +1,7 @@
-import { BlogArchive } from './Archive';
-import { BlogContent } from './Content/BlogContent';
-import CurrentCategoryProvider, {
-  CurrentCategoryContext,
-} from './Context/CategoryContext';
-import { BlogCategoryNavigator } from './Menu/BlogCategoryNavigator';
-
+export { BlogArchive } from './Archive';
+export { BlogContent } from './Content/BlogContent';
 export {
-  BlogCategoryNavigator,
-  BlogContent,
-  BlogArchive,
-  CurrentCategoryProvider,
   CurrentCategoryContext,
-};
+  default as CurrentCategoryProvider,
+} from './Context/CategoryContext';
+export { BlogCategoryNavigator } from './Menu/BlogCategoryNavigator';

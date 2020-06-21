@@ -3,7 +3,7 @@ import {
   BlogCategoryNavigator,
   BlogContent,
   CurrentCategoryProvider,
-} from 'AppComponents';
+} from 'AppComponents/Blog';
 import * as React from 'react';
 import { HomePageQuery } from './queries';
 

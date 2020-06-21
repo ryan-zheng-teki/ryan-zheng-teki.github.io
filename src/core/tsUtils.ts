@@ -1,4 +1,4 @@
-import { OAuthRequestParams } from 'src/constants';
+import { OAuthRequestParams } from './helperTypes';
 
 // typescript is amazing. It contains operations on types. Read the type definition as if we are writing normal code.
 export type RequireAtLeastOne<T, Keys extends keyof T = keyof T> = Pick<

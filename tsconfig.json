@@ -11,9 +11,10 @@
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
-      "AppComponents": ["./src/components"],
+      "AppComponents/*": ["./src/components/*"],
       "Assets": ["./src/assets"],
-      "Generated/*": ["./src/__generated/*"]
+      "Generated/*": ["./src/__generated/*"],
+      "@sdk/*": ["./src/@sdk/*"]
     }
   },
   "include": ["src/**/*", "./webpack.d.ts"],
