@@ -13,6 +13,7 @@
     "apollo-cache-inmemory": "^1.6.5",
     "apollo-client": "^2.6.8",
     "apollo-link": "^1.2.14",
+    "apollo-link-context": "^1.0.20",
     "apollo-link-error": "^1.1.13",
     "apollo-link-http": "^1.5.17",
     "bluebird": "^3.7.2",
@@ -41,7 +42,7 @@
     "genxml": "folder-to-xml ./src/blogs ./src/config/blog-categories.xml",
     "deploy": "gh-pages -t -b master -d dist",
     "schemadownload": "npx apollo schema:download --endpoint=http://localhost:8080/graphql schema.graphql",
-    "codegen": "apollo client:codegen  --includes=./src/**/*.tsx,./src/**/*.ts --target=typescript  --outputFlat src/__generated --tagName=gql",
+    "codegen": "npx apollo client:codegen  --includes=./src/**/*.tsx,./src/**/*.ts --target=typescript  --outputFlat src/__generated --tagName=gql",
     "updateRemote": "npx apollo service:push --graph=tech-blog --endpoint=http://localhost:8080/graphql",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
     "format": "prettier --write src/**/*.{ts,tsx}"

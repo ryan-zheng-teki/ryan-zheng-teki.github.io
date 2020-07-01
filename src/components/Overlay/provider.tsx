@@ -1,16 +1,10 @@
 import React from 'react';
 import { RouteComponentProps, withRouter } from 'react-router';
-import {
-  InnerOverlayContextInterface,
-  OverlayContext,
-  OverlayContextInterface,
-  OverlayTheme,
-  OverlayType,
-} from './context';
+import { InnerOverlayContextInterface, OverlayContext, OverlayContextInterface, OverlayTheme, OverlayType } from './context';
 
 export class Provider extends React.Component<
-  RouteComponentProps<{}>,
-  OverlayContextInterface
+RouteComponentProps<{}>,
+OverlayContextInterface
 > {
   notificationCloseDelay = 2500;
 
@@ -24,7 +18,8 @@ export class Provider extends React.Component<
       type: null,
     };
   }
-  componentWillMount() {
+
+  componentDidMount() {
     this.props.history.listen((location, action) => {
       console.log('on route change ', location);
     });

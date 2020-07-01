@@ -1,7 +1,8 @@
+import { useApolloClient } from '@apollo/react-hooks';
 import github from '@sdk/sociallogin/github';
 import SocialLogin, { SocialLoginProps } from '@sdk/sociallogin/SocialLogin';
 import { getQueryStringValue } from '@sdk/sociallogin/utils';
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { apiUrl } from '../../../constants';
 import GithubIcon from './GitHub-Mark-32px.png';
 
@@ -18,18 +19,23 @@ It checks if we also have accessToken.
 */
 
 const GithubButton: React.FC<SocialLoginProps> = (props) => {
+  const apolloClient = useApolloClient();
   const onClickHandler = () => {
     github.authorize();
   };
 
+  const getGithubUserInfo = useCallback(() => {
+    const getUser = async () => {
+      await github.getAccessToken();
+      const userInfo = await github.getUserInfo();
+    };
+    getUser();
+  }, []);
+
   useEffect(() => {
     const code = getQueryStringValue('code');
     if (code != null && code.length > 0) {
-      github.getAccessToken().then(() => {
-        github.getUserInfo().then((userInfo) => {
-          console.log(userInfo);
-        });
-      });
+      getGithubUserInfo();
     }
   });
 

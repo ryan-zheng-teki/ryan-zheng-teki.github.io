@@ -15,6 +15,8 @@ const Overlay: React.FC<OverlayProps> = ({
   context: { type, theme, hide },
 }) => (
   <div
+    role="button"
+    tabIndex={0}
     className={classNames('overlay', {
       [`overlay--${type}`]: !!type,
       [className]: !!className,
@@ -22,7 +24,12 @@ const Overlay: React.FC<OverlayProps> = ({
     onClick={hide}
     style={{ height: getMiddleContentHeight() }}
   >
-    <div className={`overlay__${theme}`} onClick={(e) => e.stopPropagation()}>
+    <div
+      role="button"
+      tabIndex={0}
+      className={`overlay__${theme}`}
+      onClick={(e) => e.stopPropagation()}
+    >
       {children}
     </div>
   </div>

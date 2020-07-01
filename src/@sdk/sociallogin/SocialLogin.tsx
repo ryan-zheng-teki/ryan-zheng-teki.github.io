@@ -23,16 +23,22 @@ export interface SocialLoginProps {
  * @constructor
  */
 const SocialLogin = (WrappedComponent: React.FC<SocialLoginProps>) =>
-  class SocialLogin extends Component<
-    SocialLoginProps,
-    { isLoaded: boolean; isConnected: boolean; isFetching: boolean }
+  class SocialLoginHoc extends Component<
+  SocialLoginProps,
+  { isLoaded: boolean; isConnected: boolean; isFetching: boolean }
   > {
     isStateless: boolean;
+
     sdk: any;
+
     accessToken: any;
+
     fetchProvider: boolean;
+
     loadPromise: Promise<void>;
+
     node: any;
+
     constructor(props: SocialLoginProps) {
       super(props);
 
@@ -56,10 +62,6 @@ const SocialLogin = (WrappedComponent: React.FC<SocialLoginProps>) =>
       this.logout = this.logout.bind(this);
     }
 
-    onInitSuccess(): void {
-      this.setState({ isLoaded: true });
-    }
-
     /**
      * Loads SDK on componentDidMount and handles auto login.
      */
@@ -77,6 +79,10 @@ const SocialLogin = (WrappedComponent: React.FC<SocialLoginProps>) =>
         .then(() => {
           console.log('set is loaded to true');
         });
+    }
+
+    onInitSuccess(): void {
+      this.setState({ isLoaded: true });
     }
 
     /**
@@ -103,14 +109,12 @@ const SocialLogin = (WrappedComponent: React.FC<SocialLoginProps>) =>
           }),
           () => {
             if (typeof onLoginSuccess === 'function') {
-              //onLoginSuccess(user);
+              // onLoginSuccess(user);
             }
           }
         );
-      } else {
-        if (typeof onLoginSuccess === 'function') {
-          //onLoginSuccess(user);
-        }
+      } else if (typeof onLoginSuccess === 'function') {
+        // onLoginSuccess(user);
       }
     }
 
@@ -130,27 +134,12 @@ const SocialLogin = (WrappedComponent: React.FC<SocialLoginProps>) =>
           }),
           () => {
             if (typeof onLoginFailure === 'function') {
-              //onLoginFailure(err);
+              // onLoginFailure(err);
             }
           }
         );
-      } else {
-        if (typeof onLoginFailure === 'function') {
-          //onLoginFailure(err);
-        }
-      }
-    }
-
-    /**
-     * Triggers logout process.
-     */
-    logout() {
-      if (this.state.isLoaded && this.state.isConnected) {
-        this.sdk.logout().then(this.onLogoutSuccess, this.onLogoutFailure);
-      } else if (this.state.isLoaded && !this.state.isConnected) {
-        //this.props.onLoginFailure('User not connected');
-      } else {
-        //this.props.onLoginFailure('SDK not loaded');
+      } else if (typeof onLoginFailure === 'function') {
+        // onLoginFailure(err);
       }
     }
 
@@ -172,10 +161,8 @@ const SocialLogin = (WrappedComponent: React.FC<SocialLoginProps>) =>
             }
           }
         );
-      } else {
-        if (typeof onLogoutSuccess === 'function') {
-          onLogoutSuccess();
-        }
+      } else if (typeof onLogoutSuccess === 'function') {
+        onLogoutSuccess();
       }
     }
 
@@ -185,7 +172,20 @@ const SocialLogin = (WrappedComponent: React.FC<SocialLoginProps>) =>
      */
     onLogoutFailure(err: any) {
       if (typeof this.props.onLoginFailure === 'function') {
-        //this.props.onLoginFailure(err);
+        // this.props.onLoginFailure(err);
+      }
+    }
+
+    /**
+     * Triggers logout process.
+     */
+    logout() {
+      if (this.state.isLoaded && this.state.isConnected) {
+        this.sdk.logout().then(this.onLogoutSuccess, this.onLogoutFailure);
+      } else if (this.state.isLoaded && !this.state.isConnected) {
+        // this.props.onLoginFailure('User not connected');
+      } else {
+        // this.props.onLoginFailure('SDK not loaded');
       }
     }
 
