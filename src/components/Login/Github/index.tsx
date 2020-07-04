@@ -1,7 +1,8 @@
-import { useApolloClient } from '@apollo/react-hooks';
+import { useSignIn } from '@sdk/mutations';
 import github from '@sdk/sociallogin/github';
 import SocialLogin, { SocialLoginProps } from '@sdk/sociallogin/SocialLogin';
 import { getQueryStringValue } from '@sdk/sociallogin/utils';
+import { TokenAuthVariables } from 'Generated/TokenAuth';
 import React, { useCallback, useEffect } from 'react';
 import { apiUrl } from '../../../constants';
 import GithubIcon from './GitHub-Mark-32px.png';
@@ -17,9 +18,8 @@ It checks if we also have accessToken.
 
 (1)On mobile systems, if we use github to login, there will be problems. Because mobile
 */
-
 const GithubButton: React.FC<SocialLoginProps> = (props) => {
-  const apolloClient = useApolloClient();
+  const [signIn] = useSignIn();
   const onClickHandler = () => {
     github.authorize();
   };
@@ -28,6 +28,18 @@ const GithubButton: React.FC<SocialLoginProps> = (props) => {
     const getUser = async () => {
       await github.getAccessToken();
       const userInfo = await github.getUserInfo();
+      /* Here i need to make a mutation query to send the request to backend.
+      The mutation query is createJwtToken
+      */
+      const tokenAuthParams: TokenAuthVariables = 
+      { authInput: 
+        { username: userInfo.profile.name,
+          usertype: 'GITHUB', userId: userInfo.profile.id,
+          avatarUrl: userInfo.profile.profilePicURL 
+        } 
+      };
+      signIn(tokenAuthParams);
+      // can we change the page history to home page.
     };
     getUser();
   }, []);

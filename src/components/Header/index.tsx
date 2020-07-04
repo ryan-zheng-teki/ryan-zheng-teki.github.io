@@ -6,6 +6,7 @@ import { OverlayContext } from '../Overlay';
 
 export function Header() {
   const { data: user } = useUserDetails();
+  console.log(user);
   return (
     <OverlayContext.Consumer>
       {(overlayObject) => {
@@ -16,7 +17,11 @@ export function Header() {
             </a>
             <ul className="header__right">
               <li>
-                <Link to="/login">Sign In</Link>
+                {!user ? (
+                  <Link to="/login">Sign In</Link>
+                ) : (
+                  <span><img alt="avatar" className="avartar-user" src={user.userDetails.avatarUrl} /></span>
+                )}
               </li>
               <li>
                 <Link to="/create" className="header__right__newblog">

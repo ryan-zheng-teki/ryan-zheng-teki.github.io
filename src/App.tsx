@@ -1,7 +1,8 @@
 import { ApolloProvider } from '@apollo/react-hooks';
+import { authLink } from '@sdk/auth';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { ApolloClient } from 'apollo-client';
-import { HttpLink } from 'apollo-link-http';
+import { createHttpLink } from 'apollo-link-http';
 import UserProvider from 'AppComponents/User';
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -13,11 +14,15 @@ import { apiUrl } from './constants';
 import { AboutMe, HomePage } from './pages';
 import { LoginPage } from './pages/LoginPage';
 
+
+
+const httpLink = createHttpLink({
+  uri: `${apiUrl}/graphql`,
+});
+
 const cache = new InMemoryCache();
 const client = new ApolloClient({
-  link: new HttpLink({
-    uri: `${apiUrl}/graphql`,
-  }),
+  link: authLink.concat(httpLink),
   cache,
 });
 

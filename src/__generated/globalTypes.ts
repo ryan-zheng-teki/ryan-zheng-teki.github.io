@@ -13,7 +13,8 @@ export interface JwtRequest {
   phoneNumber?: string | null;
   verificationCode?: string | null;
   usertype: string;
-  accessToken: string;
+  userId: string;
+  avatarUrl: string;
 }
 
 //==============================================================

@@ -29,20 +29,18 @@ export function isLoggedIn(): boolean {
   return !!getAuthToken();
 }
 
-/* The following code is actually quite interesting, it contains
-a lot of syntactics stuff
-*/
-const setAuthorizationLink = setContext((request, previousContext) => {
+/**
+ * request is graphql operation
+ * previousContext contains the previous data
+ */
+export const authLink = setContext((request, { headers }) => {
   const authToken = getAuthToken();
   if (authToken) {
     return {
-      ...previousContext,
       headers: {
-        ...previousContext.headers,
-        Authorization: authToken ? `JWT ${authToken}` : null,
-      },
+        ...headers,
+        Authorization: authToken ? `Bearer ${authToken}` : null,
+      }
     };
-  }
-
-  return previousContext;
+  } return {};
 });

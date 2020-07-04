@@ -1,5 +1,6 @@
 export default class SocialUser {
   provider: string;
+
   profile: {
     id: string;
     name: string;
@@ -10,6 +11,7 @@ export default class SocialUser {
   };
 
   token: { accessToken: string; expiresAt: string };
+
   /**
    * Creates a social user.
    * @param {string} provider

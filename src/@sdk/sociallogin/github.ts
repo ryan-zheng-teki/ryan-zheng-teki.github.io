@@ -43,8 +43,8 @@ const init = ({
     oauth = true;
     gatekeeperURL = gateKeeper;
 
-    let githubScopes: string[] = scope.split(',');
-    let requestedScopes = githubScopes
+    const githubScopes: string[] = scope.split(',');
+    const requestedScopes = githubScopes
       .reduce((acc: Array<string>, item) => {
         if (typeof item === 'string' && acc.indexOf(item) === -1) {
           acc.push(item.trim());
@@ -81,16 +81,16 @@ const getUserInfo = async () => {
   }
 
   try {
-    let response = await window.fetch(GITHUB_API, {
+    const response = await window.fetch(GITHUB_API, {
       method: 'POST',
       headers: new Headers({
         Authorization: `Bearer ${githubAccessToken || githubAppId}`,
       }),
       body: JSON.stringify({
-        query: 'query { viewer { login, name, email, avatarUrl, id } }',
+        query: 'query { viewer { login, name, email, avatarUrl(size:25), id } }',
       }),
     });
-    let json = await response.json();
+    const json = await response.json();
     if (json.message || json.errors) {
       return Promise.reject(
         rslError({
@@ -101,7 +101,7 @@ const getUserInfo = async () => {
         })
       );
     }
-    return json;
+    return generateUser(json);
   } catch (error) {
     return Promise.reject(
       rslError({
@@ -155,13 +155,13 @@ const getAccessToken = async () => {
     return Promise.reject(new Error('Authorization code not found'));
   }
   try {
-    let response = await window.fetch(`${gatekeeperURL}/graphql`, {
+    const  response = await window.fetch(`${gatekeeperURL}/graphql`, {
       method: 'POST',
       body: JSON.stringify({
         query: `query { githubToken(code:"${authorizationCode}")}`,
       }),
     });
-    let json = await response.json();
+    const  json = await response.json();
     if (json.error || !json.data.githubToken) {
       return Promise.reject(
         rslError({
@@ -172,7 +172,7 @@ const getAccessToken = async () => {
         })
       );
     }
-    let githubToken: GithubToken = await JSON.parse(json.data.githubToken);
+    const  githubToken: GithubToken = await JSON.parse(json.data.githubToken);
     githubAccessToken = githubToken.access_token;
   } catch (error) {
     return Promise.reject(
