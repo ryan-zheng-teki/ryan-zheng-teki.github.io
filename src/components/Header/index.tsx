@@ -6,7 +6,7 @@ import { OverlayContext } from '../Overlay';
 
 export function Header() {
   const { data: user } = useUserDetails();
-  console.log(user);
+
   return (
     <OverlayContext.Consumer>
       {(overlayObject) => {

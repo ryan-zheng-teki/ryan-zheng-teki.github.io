@@ -1,9 +1,12 @@
+import { useApolloClient } from '@apollo/react-hooks';
 import { useSignIn } from '@sdk/mutations';
+import { useUserDetails } from '@sdk/queries';
 import github from '@sdk/sociallogin/github';
 import SocialLogin, { SocialLoginProps } from '@sdk/sociallogin/SocialLogin';
 import { getQueryStringValue } from '@sdk/sociallogin/utils';
 import { TokenAuthVariables } from 'Generated/TokenAuth';
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
+import { Redirect } from 'react-router';
 import { apiUrl } from '../../../constants';
 import GithubIcon from './GitHub-Mark-32px.png';
 
@@ -19,11 +22,12 @@ It checks if we also have accessToken.
 (1)On mobile systems, if we use github to login, there will be problems. Because mobile
 */
 const GithubButton: React.FC<SocialLoginProps> = (props) => {
-  const [signIn] = useSignIn();
-  const onClickHandler = () => {
-    github.authorize();
-  };
+  const githubAuthorizationCode = useRef(null);
 
+
+  const apolloClient = useApolloClient();
+  const { data: user } = useUserDetails();
+  const [signIn] = useSignIn();
   const getGithubUserInfo = useCallback(() => {
     const getUser = async () => {
       await github.getAccessToken();
@@ -39,18 +43,34 @@ const GithubButton: React.FC<SocialLoginProps> = (props) => {
         } 
       };
       signIn(tokenAuthParams);
+      apolloClient.resetStore();
       // can we change the page history to home page.
     };
     getUser();
   }, []);
 
+
+
+  const code = getQueryStringValue('code');
+  if (code != null && code.length > 0 && githubAuthorizationCode.current == null) {
+    githubAuthorizationCode.current = code;
+  }
+
   useEffect(() => {
-    const code = getQueryStringValue('code');
-    if (code != null && code.length > 0) {
+    if(githubAuthorizationCode.current != null) {
       getGithubUserInfo();
     }
-  });
+  }, [githubAuthorizationCode.current]);//
+  
 
+  const onClickHandler = () => {
+    github.authorize();
+  };
+
+  if( user ) {
+    return <Redirect to="/" />;
+  }
+  
   return (
     <button className="github__button" type="button" onClick={onClickHandler}>
       <img

@@ -149,7 +149,7 @@ type GithubToken = {
   scope: string;
 };
 
-const getAccessToken = async () => {
+const getAccessToken = async ():Promise<any> => {
   const authorizationCode = getQueryStringValue('code');
   if (!authorizationCode) {
     return Promise.reject(new Error('Authorization code not found'));
@@ -174,6 +174,7 @@ const getAccessToken = async () => {
     }
     const  githubToken: GithubToken = await JSON.parse(json.data.githubToken);
     githubAccessToken = githubToken.access_token;
+    return Promise.resolve(null);
   } catch (error) {
     return Promise.reject(
       rslError({

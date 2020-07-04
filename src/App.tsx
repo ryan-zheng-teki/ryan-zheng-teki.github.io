@@ -3,7 +3,6 @@ import { authLink } from '@sdk/auth';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { ApolloClient } from 'apollo-client';
 import { createHttpLink } from 'apollo-link-http';
-import UserProvider from 'AppComponents/User';
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.scss';
@@ -34,27 +33,25 @@ function App() {
   return (
     <Router>
       <ApolloProvider client={client}>
-        <UserProvider>
-          <OverlayProvider>
-            <Header />
-            <Switch>
-              <Route exact path="/">
-                <HomePage />
-              </Route>
-              <Route path="/about">
-                <AboutMe />
-              </Route>
-              <Route path="/create">
-                <QuillEditor />
-              </Route>
-              <Route path="/login">
-                <LoginPage />
-              </Route>
-            </Switch>
-            <OverlayManager />
-            <Footer />
-          </OverlayProvider>
-        </UserProvider>
+        <OverlayProvider>
+          <Header />
+          <Switch>
+            <Route exact path="/">
+              <HomePage />
+            </Route>
+            <Route path="/about">
+              <AboutMe />
+            </Route>
+            <Route path="/create">
+              <QuillEditor />
+            </Route>
+            <Route path="/login">
+              <LoginPage />
+            </Route>
+          </Switch>
+          <OverlayManager />
+          <Footer />
+        </OverlayProvider>
       </ApolloProvider>
     </Router>
   );

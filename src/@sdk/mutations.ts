@@ -13,7 +13,6 @@ import { setAuthToken } from './auth';
  */
 export function useSignIn(): any {
   const apolloClient = useApolloClient();
-  apolloClient.resetStore();
 
   const runMutation = useCallback( async (variables: TokenAuthVariables) => {
     // the variables are sent from upper logic
